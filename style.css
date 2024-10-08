@@ -186,11 +186,12 @@ input {
 .misc-filters,
 .stat-filters {
   width: 100%;
+  padding: 0 10px 10px;
+
 }
 .misc-filters {
   display: flex;
   flex-direction: column;
-  padding: 0 8px 0;
 }
 
 .filter {
@@ -322,8 +323,7 @@ input {
 
 .filter-stats {
   display: flex;
-  margin: 0 auto;
-  width: 90%;
+  margin: 0 auto 0 39px;
 }
 
 .label {
