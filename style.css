@@ -31,20 +31,17 @@ a {
 input {
   all: unset;
 }
-input::placeholder {
-  color: var(--placeholder-color);
-}
-input:focus::placeholder {
-  color: var(--placeholder-color-focused);
-}
 
 #logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+#logo a {
+  max-width: 256px;
+}
 #logo a img {
-  width: 155px;
+  width: 100%;
 }
 #wrapper {
   width: 100%;
@@ -169,6 +166,9 @@ input:focus::placeholder {
   min-height: 20px;
   text-size-adjust: auto;
   padding: 1px 4px;
+}
+.dropdowns input::placeholder{
+  color: var(--font-color);
 }
 .dropdowns input:focus {
   color: var(--font-color);
