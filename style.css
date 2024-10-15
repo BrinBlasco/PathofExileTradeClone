@@ -1,0 +1,378 @@
+@import url(fonts.css);
+:root {
+  --input-backgrounds: #1e2124;
+  --input-labels: #0d0e10;
+  --placeholder-color-focused: #707070;
+  --font-color: #e2e2e2;
+  --fourth-color: #634928;
+  --filters-font-color: #fff8e1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roman-smallcaps;
+  font-size: 14.3px;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  background: black url("assets/settlersofkalguur-bg.jpg") no-repeat top center
+    fixed;
+  background-size: contain;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+input {
+  all: unset;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#logo a {
+  max-width: 256px;
+}
+#logo a img {
+  width: 100%;
+}
+#wrapper {
+  width: 100%;
+  height: 100%;
+}
+#trade {
+  position: relative;
+  min-height: 200px;
+  max-width: 1520px;
+  margin: 0 auto 64px;
+}
+
+.navigation ul {
+  width: 50%;
+  list-style: none;
+}
+
+.navigation ul li {
+  display: inline;
+}
+.navigation .tab.main {
+  float: left;
+}
+.navigation .tab.account {
+  float: right;
+}
+.menu-search,
+.menu-bulk {
+  float: left;
+}
+.menu-about,
+.menu-settings {
+  float: right;
+}
+
+.navigation ul li {
+  height: 32px;
+}
+.navigation ul li a {
+  display: inline-block;
+  height: 100%;
+  padding: 5px 10px;
+  background-color: rgba(10, 10, 10, 0.9);
+}
+.navigation ul li a:hover {
+  background-color: #5a3806;
+}
+.navigation ul .menu-bulk a:hover,
+.navigation ul .menu-about a:hover,
+.navigation ul .menu-settings a:hover {
+  background-color: #533e22;
+}
+
+.navigation ul .menu-search a {
+  background-color: #5a3806;
+  border: 1px solid rgba(10, 10, 10, 0);
+}
+.navigation ul .menu-search a:hover {
+  border-left: 1px solid #886437;
+  border-top: 1px solid #886437;
+  border-right: 1px solid #886437;
+}
+
+.navigation ul li a span {
+  color: rgb(233, 207, 159);
+  padding: 5px;
+}
+.navigation ul li a i {
+  margin-right: 4px;
+  color: white;
+}
+.clr {
+  clear: both;
+}
+
+.dropdowns .arrow {
+  position: absolute;
+  height: 34px;
+  width: 40px;
+  padding: 8px 8px;
+  right: 0;
+  text-align: center;
+}
+
+/* BELOW TABS */
+
+.search-bar {
+  display: flex;
+  font-size: 0.9rem;
+  padding: 8px 8px 0;
+  background-color: black;
+  border-top: 1px solid #5a3806;
+}
+.search-left,
+.search-right {
+  display: flex;
+}
+.search-left {
+  width: 140%;
+}
+.search-right {
+  width: 100%;
+}
+
+.dropdowns {
+  display: grid;
+  place-items: center normal;
+  position: relative;
+  min-height: 30px;
+  width: 100%;
+  font-size: 1em;
+  padding: 5px 8px;
+
+  color: var(--font-color);
+  background-color: var(--input-backgrounds);
+  border-right: 1px solid black;
+  cursor: pointer;
+}
+
+.dropdowns input {
+  width: 100%;
+  min-height: 20px;
+  text-size-adjust: auto;
+  padding: 1px 4px;
+}
+.dropdowns input::placeholder{
+  color: var(--font-color);
+}
+.dropdowns input:focus {
+  color: var(--font-color);
+  cursor: text;
+}
+.dropdowns input:focus::placeholder {
+  color: var(--placeholder-color-focused);
+}
+
+.filters {
+  display: flex;
+  padding: 8px 0 0;
+  background-color: black;
+}
+.misc-filters,
+.stat-filters {
+  width: 100%;
+  padding: 0 10px 10px;
+
+}
+.misc-filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter {
+  display: flex;
+  margin-bottom: 3px;
+  background-color: black;
+}
+
+.filter-body {
+  width: 100%;
+  height: 30px;
+  padding: 6px 12px 6px 0;
+  color: var(--filters-font-color);
+  border-bottom: 1px solid #465260;
+  cursor: pointer;
+}
+.group-btn {
+  padding: 0 4px 0 0;
+}
+.toggle-btn {
+  height: 30px;
+  line-height: 20px;
+  padding: 5px 12px;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-btn .kvdratk {
+  border: 2px solid black;
+  height: 11px;
+  width: 11px;
+  outline: 2px solid var(--fourth-color);
+}
+
+.toggle-btn.on {
+  border: 2px solid white;
+}
+
+.toggle-btn .kvdratk.on {
+  background-color: white;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 3px;
+  background-color: black;
+}
+
+.controls-left,
+.controls-right {
+  width: 25%;
+}
+
+.controls-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 0 5px 0 5px;
+}
+
+.controls-center .search-btn {
+  width: 60%;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 6px;
+  background-color: #0f304d;
+  border: 1px solid #4c4c7d;
+  color: var(--font-color);
+}
+.controls-center .search-btn:hover {
+  background-color: #133d63;
+}
+
+.controls-right .clear-btn {
+  min-height: 34px;
+  min-width: 96px;
+  background-color: var(--input-backgrounds);
+  border: 1px solid black;
+  color: var(--font-color);
+}
+.controls-right .toggle-search {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  min-height: 34px;
+  min-width: 128px;
+  background-color: #0f304d;
+  border: 1px solid #4c4c7d;
+
+  color: var(--font-color);
+}
+
+.controls .controls-right .clear-btn:hover {
+  background-color: #2d3136;
+}
+.controls-right {
+  text-align: right;
+}
+
+.bottom {
+  position: absolute;
+  color: #465260;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .bottom {
+    display: none;
+  }
+}
+
+.expanded.on {
+  width: 100%;
+  display: block;
+}
+.expanded.off {
+  display: none;
+}
+
+.filter-stats {
+  display: flex;
+  margin: 0 36px 0 36px;
+}
+
+.label {
+  width: 60%;
+  max-height: 30px;
+  padding: 6px 12px;
+  margin-bottom: 3px;
+  background-color: var(--input-labels);
+  border-left: 1px solid var(--fourth-color);
+  color: var(--filters-font-color);
+  /* border: 1px solid white; */
+}
+
+.selection {
+  position: relative;
+  width: 40%;
+  max-height: 30px;
+  padding: 4px 7px;
+  margin-left: 3px;
+  background-color: var(--input-backgrounds);
+}
+.selection .filter-tags {
+  text-align: center;
+  width: 100%;
+  padding: 1px 4px;
+  color: var(--font-color);
+}
+.filter-tags::placeholder {
+  color: var(--font-color);
+}
+.filter-tags:focus::placeholder {
+  color: var(--placeholder-color-focused);
+  text-align: left;
+}
+.filter-tags:focus {
+  text-align: left;
+}
+
+.selection .arrow {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  text-align: center;
+  color: var(--font-color);
+}
+
+.fa {
+  transition: transform 0.2s ease;
+}
+.selection:focus-within .fa {
+  transform: rotate(180deg);
+}
