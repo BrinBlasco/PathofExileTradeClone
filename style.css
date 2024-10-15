@@ -31,17 +31,20 @@ a {
 input {
   all: unset;
 }
+input::placeholder {
+  color: var(--placeholder-color);
+}
+input:focus::placeholder {
+  color: var(--placeholder-color-focused);
+}
 
 #logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#logo a {
-  max-width: 256px;
-}
 #logo a img {
-  width: 100%;
+  width: 155px;
 }
 #wrapper {
   width: 100%;
@@ -167,9 +170,6 @@ input {
   text-size-adjust: auto;
   padding: 1px 4px;
 }
-.dropdowns input::placeholder{
-  color: var(--font-color);
-}
 .dropdowns input:focus {
   color: var(--font-color);
   cursor: text;
@@ -186,12 +186,11 @@ input {
 .misc-filters,
 .stat-filters {
   width: 100%;
-  padding: 0 10px 10px;
-
 }
 .misc-filters {
   display: flex;
   flex-direction: column;
+  padding: 0 8px 0;
 }
 
 .filter {
@@ -300,17 +299,16 @@ input {
 }
 
 .bottom {
-  position: absolute;
+  position: relative;
   color: #465260;
   bottom: 8px;
   width: 100%;
   text-align: center;
 }
-
-@media (max-width: 1024px) {
-  .bottom {
-    display: none;
-  }
+#wrapper::after {
+  content: "";
+  display: block;
+  height: 80px;
 }
 
 .expanded.on {
@@ -323,7 +321,8 @@ input {
 
 .filter-stats {
   display: flex;
-  margin: 0 auto 0 36px;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .label {
