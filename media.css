@@ -3,4 +3,26 @@
     flex-direction: column;
     align-items: stretch;
   }
+  .search-bar {
+    flex-wrap: wrap;
+  }
+  .search-bar .dropdowns {
+    margin-bottom: 1px;
+  }
+}
+@media (max-width: 1024px) {
+  .bottom {
+    display: none;
+  }
+}
+
+@media (max-width: 728px) {
+  .tab.main,
+  .tab.account {
+    height: 32px;
+  }
+  .tab.account span,
+  .tab.main span {
+    display: none;
+  }
 }
