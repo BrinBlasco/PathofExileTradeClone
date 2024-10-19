@@ -30,6 +30,7 @@ a {
 }
 input {
   all: unset;
+  box-sizing: border-box;
 }
 
 #logo {
@@ -204,6 +205,10 @@ input {
   margin-bottom: 3px;
   background-color: black;
 }
+.filter-group {
+  position: relative;
+  width: 100%;
+}
 
 .filter-body {
   width: 100%;
@@ -312,26 +317,28 @@ input {
   text-align: center;
 }
 
-.expanded.on {
-  width: 100%;
+.expanded {
   display: block;
+  width: 100%;
+  position: relative;
 }
 .expanded.off {
   display: none;
 }
 
 .filter-stats {
-  display: flex;
-  position: relative;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 36px repeat(9, 10%);
+  position: static;
   height: 33px !important;
-  margin: 0 36px 0 36px;
 }
 .filter-stats.half .selection {
   margin-right: 2px;
 }
 
 .label {
-  width: 60%;
+  grid-column: 2 / span 5;
   height: 30px;
   padding: 6px 12px;
   margin-bottom: 3px;
@@ -343,9 +350,14 @@ input {
   /* border: 1px solid white; */
 }
 
+.label.minmax {
+  grid-column: 2 / span 3;
+  grid-column-start: 2;
+}
+
 .selection {
   position: relative;
-  width: 40%;
+  grid-column: span 4;
   height: 30px;
   padding: 4px 7px;
   margin: 0 2px 0 3px;
@@ -386,7 +398,6 @@ input {
 }
 
 .min-max {
-  box-sizing: border-box;
   background-color: var(--input-backgrounds);
   height: 30px;
   text-align: center;
@@ -395,7 +406,6 @@ input {
   border: 1px solid var(--input-backgrounds);
   font-size: 13px;
   padding: 5px;
-  width: 20%;
 }
 .min-max::placeholder,
 .min-max:focus::placeholder {
@@ -431,12 +441,7 @@ input {
   color: var(--filters-font-color);
 }
 
-.filter-stats.shrink-mm .min-max {
-  width: 10%;
-}
-
 .sockets {
-  box-sizing: border-box;
   width: 32px;
   height: 30px;
   text-align: center;
