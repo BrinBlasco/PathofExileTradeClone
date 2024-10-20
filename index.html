@@ -113,10 +113,10 @@
                   </div>
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
-              </div>
-              <div class="dropdown" id="item_category">
-                <ul>
-                </ul>
+                <div class="dropdown" id="item_category">
+                  <ul>
+                  </ul>
+                </div>
               </div>
               <div class="filter-stats full">
                 <div class="label">
@@ -127,6 +127,10 @@
                     <i class="fa fa-caret-down"></i>
                   </div>
                   <input type="text" class="filter-tags" placeholder="Any">
+                </div>
+                <div class="dropdown" id="item_rarity">
+                  <ul>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -1058,7 +1062,7 @@
 
         <div class="controls-right">
           <button class="clear-btn">Clear</button>
-          <button class="toggle-search">
+          <button class="toggle-search" onclick="toggleFilters()">
             <span>Hide Filters</span>
             <div>
               <i class="fa fa-chevron-up"></i>
