@@ -52,15 +52,14 @@ async function getItems() {
     })
     .then((data) => {
       for (const section in data) {
-        if (data.hasOwnProperty(section)) {
-          localStorage.setItem(section, JSON.stringify(data[section]));
-        }
+        localStorage.setItem(section, JSON.stringify(data[section]));
       }
       outsideData = data;
     })
     .catch((error) => console.error("Error fetching items:", error));
 
-  load("item_category");
+  // load("item_category");
+  saveDataToLocalStorage(outsideData);
 }
 
 function toggleFilters() {
@@ -69,3 +68,9 @@ function toggleFilters() {
 }
 
 getItems();
+
+function saveDataToLocalStorage(data) {
+  for (let el in data) {
+    console.log(data[el]);
+  }
+}
