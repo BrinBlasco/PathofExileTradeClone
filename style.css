@@ -30,6 +30,7 @@ a {
 }
 input {
   all: unset;
+  box-sizing: border-box;
 }
 
 #logo {
@@ -204,6 +205,10 @@ input {
   margin-bottom: 3px;
   background-color: black;
 }
+.filter-group {
+  position: relative;
+  width: 100%;
+}
 
 .filter-body {
   width: 100%;
@@ -304,48 +309,32 @@ input {
   text-align: right;
 }
 
-.bottom {
-  position: absolute;
-  color: #465260;
-  bottom: 8px;
+.expanded {
   width: 100%;
-  text-align: center;
-}
-
-.expanded.on {
-  width: 100%;
-  display: block;
+  padding: 0 36px;
 }
 .expanded.off {
   display: none;
 }
 
 .filter-stats {
-  display: flex;
-  position: relative;
-  height: 33px !important;
-  margin: 0 36px 0 36px;
-}
-.filter-stats.half .selection {
-  margin-right: 2px;
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  margin-bottom: 3px;
 }
 
 .label {
-  width: 60%;
   height: 30px;
   padding: 6px 12px;
-  margin-bottom: 3px;
   background-color: var(--input-labels);
   border-left: 1px solid var(--fourth-color);
   color: var(--filters-font-color);
   white-space: nowrap;
   overflow: hidden;
-  /* border: 1px solid white; */
 }
 
 .selection {
   position: relative;
-  width: 40%;
   height: 30px;
   padding: 4px 7px;
   margin: 0 2px 0 3px;
@@ -386,16 +375,14 @@ input {
 }
 
 .min-max {
-  box-sizing: border-box;
-  background-color: var(--input-backgrounds);
-  height: 30px;
-  text-align: center;
-  color: #fff;
-  margin-left: 3px;
-  border: 1px solid var(--input-backgrounds);
-  font-size: 13px;
   padding: 5px;
-  width: 20%;
+  height: 30px;
+  margin-left: 3px;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  background-color: var(--input-backgrounds);
+  border: 1px solid var(--input-backgrounds);
 }
 .min-max::placeholder,
 .min-max:focus::placeholder {
@@ -431,12 +418,7 @@ input {
   color: var(--filters-font-color);
 }
 
-.filter-stats.shrink-mm .min-max {
-  width: 10%;
-}
-
 .sockets {
-  box-sizing: border-box;
   width: 32px;
   height: 30px;
   text-align: center;
