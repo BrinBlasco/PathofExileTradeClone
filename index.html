@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="grid.css">
-  <link rel="stylesheet" href="media.css">
-  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/grid.css">
+  <link rel="stylesheet" href="/styles/media.css">
+  <link rel="stylesheet" href="/styles/fonts.css" />
 
 </head>
 
@@ -96,7 +96,7 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
+                <button class="toggle-btn">
                   <div class="kvdratk on"></div>
                 </button>
               </span>
@@ -113,6 +113,10 @@
                   </div>
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
+              </div>
+              <div class="dropdown" id="item_category">
+                <ul>
+                </ul>
               </div>
               <div class="filter-stats full">
                 <div class="label">
@@ -131,13 +135,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Weapon Filters</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats">
                 <div class="label">
                   Damage
@@ -187,13 +191,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Armour Filters</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats">
                 <div class="label">
                   Armour
@@ -243,13 +247,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Socket Filters</span>
             </div>
-            <div class="expanded ">
+            <div class="expanded off ">
               <div class="filter-stats rgbw">
                 <div class="label">
                   Challenge Type
@@ -284,13 +288,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Requirements</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats">
                 <div class="label">
                   Level
@@ -343,13 +347,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Map Filters</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats">
                 <div class="label">
                   Map Tier
@@ -436,13 +440,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Heist Filters</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats">
                 <div class="label">
                   Wings Revelad
@@ -573,13 +577,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Sanctum Filters</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats">
                 <div class="label">
                   Reslove
@@ -614,13 +618,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Ultimatum Filters</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats full">
                 <div class="label">
                   Challenge Type
@@ -671,13 +675,13 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Miscellaneous</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats">
                 <div class="label">
                   Quality
@@ -943,18 +947,18 @@
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
-                  <div class="kvdratk on"></div>
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Trade Filters</span>
             </div>
-            <div class="expanded">
+            <div class="expanded off">
               <div class="filter-stats full">
                 <div class="label">
                   Seller Account
                 </div>
                 <div class="selection">
-                  <input type="text" class="filter-tags" placeholder="Enter Accont Name">
+                  <input type="text" class="filter-tags" placeholder="Enter Accont Name...">
                 </div>
               </div>
               <div class="filter-stats full">
@@ -990,6 +994,16 @@
                   <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price">
                 </div>
               </div>
+              <div class="filter-stats">
+                <div class="label" style="grid-column: span 4;">
+                  Buyout Price
+                </div>
+                <div class="selection" style="grid-column: span 4; margin-right: 0;">
+                  <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price">
+                </div>
+                <input type="text" class="min-max" placeholder="min">
+                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+              </div>
             </div>
           </div>
 
@@ -998,8 +1012,8 @@
           <div class="filter-group">
             <div class="filter">
               <span class="group-btn">
-                <button class="toggle-btn off">
-                  <div class="kvdratk on"></div>
+                <button class="toggle-btn">
+                  <div class="kvdratk"></div>
                 </button>
               </span>
               <span class="filter-body">Stat Filters</span>
@@ -1013,7 +1027,7 @@
             </div>
             <div class="expanded off">
               <div class="filter-stats">
-                <div class="selection full">
+                <div class="selection full" style="grid-column: span 10;">
                   <div class="arrow">
                     <i class="fa fa-caret-down"></i>
                   </div>
@@ -1021,6 +1035,15 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="expanded">
+
+            <div class="filter-stats">
+              <div class="selection add-stat-group">
+                <input type="text" class="filter-tags" placeholder="+ Add Stat Group">
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -1049,14 +1072,17 @@
   </div>
   </div>
 
-  <!-- <div class="bottom">
-    <span class="copyright">© 2010 - 2024 <a href="http://www.grindinggear.com">Grinding Gear Games</a></span><br>
+  <div class="bottom" style="margin-top: -40px;">
+    <span class="copyright">© 2010 - 2024 <a href="http://www.grindinggear.com" style="color: #444;">Grinding Gear
+        Games</a></span><br>
     <span class="legal">
-      <a href="/legal/terms-of-use-and-privacy-policy">Terms of Use, Privacy Notice and Cookies Notice</a><br>
+      <a href="/legal/terms-of-use-and-privacy-policy" style="color: #444;">Terms of Use, Privacy Notice and Cookies
+        Notice</a><br>
     </span>
-  </div> -->
+  </div>
 
   <script src="script.js"></script>
+  <script src="getItems.js"></script>
 </body>
 
 </html>
