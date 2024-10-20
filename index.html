@@ -9,6 +9,7 @@
 
   <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="grid.css">
   <link rel="stylesheet" href="media.css">
   <link rel="stylesheet" href="fonts.css" />
 
@@ -102,7 +103,7 @@
               <span class="filter-body">Type Filters</span>
             </div>
             <div class="expanded">
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Item Category
                 </div>
@@ -113,7 +114,7 @@
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
               </div>
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Item Rarity
                 </div>
@@ -138,13 +139,13 @@
             </div>
             <div class="expanded">
               <div class="filter-stats">
-                <div class="label minmax">
+                <div class="label">
                   Damage
                 </div>
                 <input type="text" class="min-max" placeholder="min">
                 <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
                 <!-- Tle umes inputi za min in max -->
-                <div class="label minmax">
+                <div class="label">
                   Attacks per Second
                 </div>
                 <input type="text" class="min-max" placeholder="min">
@@ -192,7 +193,7 @@
               </span>
               <span class="filter-body">Armour Filters</span>
             </div>
-            <div class="expanded off">
+            <div class="expanded">
               <div class="filter-stats">
                 <div class="label">
                   Armour
@@ -248,11 +249,12 @@
               </span>
               <span class="filter-body">Socket Filters</span>
             </div>
-            <div class="expanded off">
-              <div class="filter-stats shrink-mm">
+            <div class="expanded ">
+              <div class="filter-stats rgbw">
                 <div class="label">
                   Challenge Type
                 </div>
+
                 <input type="text" class="sockets red" placeholder="R">
                 <input type="text" class="sockets green" placeholder="G">
                 <input type="text" class="sockets blue" placeholder="B">
@@ -261,14 +263,17 @@
                 <input type="text" class="min-max" placeholder="min">
                 <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
               </div>
-              <div class="filter-stats shrink-mm">
+              <div class="filter-stats rgbw">
                 <div class="label">
                   Reward Type
                 </div>
-                <input type="text" class="sockets red" placeholder="R">
-                <input type="text" class="sockets green" placeholder="G">
-                <input type="text" class="sockets blue" placeholder="B">
-                <input type="text" class="sockets white" placeholder="W">
+                <div class="socketWrap">
+
+                  <input type="text" class="sockets red" placeholder="R">
+                  <input type="text" class="sockets green" placeholder="G">
+                  <input type="text" class="sockets blue" placeholder="B">
+                  <input type="text" class="sockets white" placeholder="W">
+                </div>
 
                 <input type="text" class="min-max" placeholder="min">
                 <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
@@ -285,7 +290,7 @@
               </span>
               <span class="filter-body">Requirements</span>
             </div>
-            <div class="expanded off">
+            <div class="expanded">
               <div class="filter-stats">
                 <div class="label">
                   Level
@@ -314,7 +319,7 @@
                 <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Character Class
                 </div>
@@ -344,7 +349,7 @@
               </span>
               <span class="filter-body">Map Filters</span>
             </div>
-            <div class="expanded off">
+            <div class="expanded">
               <div class="filter-stats">
                 <div class="label">
                   Map Tier
@@ -373,7 +378,7 @@
                 <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Area Level
                 </div>
@@ -391,7 +396,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Blighted Map
                 </div>
@@ -437,7 +442,7 @@
               </span>
               <span class="filter-body">Heist Filters</span>
             </div>
-            <div class="expanded off">
+            <div class="expanded">
               <div class="filter-stats">
                 <div class="label">
                   Wings Revelad
@@ -480,7 +485,7 @@
                 <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Contract Objective Value
                 </div>
@@ -550,7 +555,7 @@
                 <!-- Tle umes inputi za min in max -->
               </div>
               <div class="filter-stats">
-                <div class="label half">
+                <div class="label">
                   Engineering
                 </div>
                 <input type="text" class="min-max" placeholder="min">
@@ -574,7 +579,7 @@
               </span>
               <span class="filter-body">Sanctum Filters</span>
             </div>
-            <div class="expanded off">
+            <div class="expanded">
               <div class="filter-stats">
                 <div class="label">
                   Reslove
@@ -615,8 +620,8 @@
               </span>
               <span class="filter-body">Ultimatum Filters</span>
             </div>
-            <div class="expanded off">
-              <div class="filter-stats">
+            <div class="expanded">
+              <div class="filter-stats full">
                 <div class="label">
                   Challenge Type
                 </div>
@@ -627,7 +632,7 @@
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
               </div>
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Reward Type
                 </div>
@@ -638,7 +643,7 @@
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
               </div>
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Required Item
                 </div>
@@ -649,7 +654,7 @@
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
               </div>
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Reward Unique
                 </div>
@@ -672,7 +677,7 @@
               </span>
               <span class="filter-body">Miscellaneous</span>
             </div>
-            <div class="expanded off">
+            <div class="expanded">
               <div class="filter-stats">
                 <div class="label">
                   Quality
@@ -701,7 +706,7 @@
                 <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Transigured Gem
                 </div>
@@ -723,7 +728,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Corpse Type
                 </div>
@@ -746,7 +751,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Fractured Item
                 </div>
@@ -769,7 +774,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Searing Exarch Item
                 </div>
@@ -792,7 +797,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Identified
                 </div>
@@ -815,7 +820,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Mirrored
                 </div>
@@ -838,7 +843,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Crafted
                 </div>
@@ -861,7 +866,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Foreseeing
                 </div>
@@ -895,7 +900,7 @@
                 <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Alternate Art
                 </div>
@@ -918,7 +923,7 @@
                 </div>
                 <!-- Tle umes inputi za min in max -->
               </div>
-              <div class="filter-stats half">
+              <div class="filter-stats">
                 <div class="label">
                   Scourge Tier
                 </div>
@@ -943,8 +948,8 @@
               </span>
               <span class="filter-body">Trade Filters</span>
             </div>
-            <div class="expanded off">
-              <div class="filter-stats">
+            <div class="expanded">
+              <div class="filter-stats full">
                 <div class="label">
                   Seller Account
                 </div>
@@ -952,7 +957,7 @@
                   <input type="text" class="filter-tags" placeholder="Enter Accont Name">
                 </div>
               </div>
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Collapse Listings By Account
                 </div>
@@ -963,7 +968,7 @@
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
               </div>
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Listed
                 </div>
@@ -974,7 +979,7 @@
                   <input type="text" class="filter-tags" placeholder="Any Time">
                 </div>
               </div>
-              <div class="filter-stats">
+              <div class="filter-stats full">
                 <div class="label">
                   Sale Type
                 </div>
