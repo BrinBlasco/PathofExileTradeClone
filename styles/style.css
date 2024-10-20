@@ -481,14 +481,11 @@ input {
   text-align: center;
 }
 
-.dropdown.off {
-  display: none;
-}
-
 .dropdown {
+  display: none;
   position: absolute;
   left: 36px;
-  top: 31px;
+  margin-top: 31px;
   height: calc(9 * 30px);
   width: calc(100% - 74px);
   z-index: 1;
@@ -514,4 +511,7 @@ input {
 .dropdown ul li .list-item:hover {
   background-color: #465260;
   font-weight: 1000;
+}
+.selection:focus-within + .dropdown {
+  display: block;
 }
