@@ -348,6 +348,7 @@ input {
   padding: 4px 7px;
   margin: 0 2px 0 3px;
   background-color: var(--input-backgrounds);
+  cursor: pointer;
 }
 .selection .filter-tags {
   text-align: center;
@@ -484,9 +485,8 @@ input {
 .dropdown {
   display: none;
   position: absolute;
-  left: 36px;
-  margin-top: 31px;
-  height: calc(9 * 30px);
+  margin: 31px 0 36px 0;
+  max-height: calc(9 * 30px);
   width: calc(100% - 74px);
   z-index: 1;
   background-color: var(--input-backgrounds);
@@ -494,6 +494,12 @@ input {
   border-bottom: 1px solid var(--fourth-color);
   overflow-y: scroll;
   user-select: none;
+}
+.dropdown.half {
+  width: calc((100% - 74px) / 2 - 1px);
+}
+.dropdown.half.right {
+  margin-left: calc((100% - 74px) / 2 + 1px);
 }
 
 .dropdown ul li {

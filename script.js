@@ -30,13 +30,13 @@ filterGroups.forEach((group) => {
 function load(elId) {
   const dropdown = document.querySelector(`#${elId} ul`);
   const item_category = JSON.parse(
-    localStorage.getItem("type_filters")
-  ).item_category;
+    localStorage.getItem(elId)
+  );
 
   for (let el of item_category) {
     dropdown.insertAdjacentHTML(
       "beforeend",
-      `<li><span class="list-item">${el}</span></li>`
+      `<li><span class="list-item" id=${el}>${el}</span></li>`
     );
   }
 }
@@ -57,9 +57,11 @@ async function getItems() {
       outsideData = data;
     })
     .catch((error) => console.error("Error fetching items:", error));
-
-  // load("item_category");
-  saveDataToLocalStorage(outsideData);
+  
+  console.log(outsideData.sections)
+  for(let section of outsideData.sections){
+    load(section)
+  }
 }
 
 function toggleFilters() {
@@ -68,9 +70,3 @@ function toggleFilters() {
 }
 
 getItems();
-
-function saveDataToLocalStorage(data) {
-  for (let el in data) {
-    console.log(data[el]);
-  }
-}
