@@ -27,18 +27,23 @@ filterGroups.forEach((group) => {
   filterBody.addEventListener("click", clickFilterBody);
 });
 
-function load(elId) {
-  const dropdown = document.querySelector(`#${elId} ul`);
-  const item_category = JSON.parse(
-    localStorage.getItem(elId)
-  );
+// function load(elId) {
+//   const dropdown = document.querySelector(`#${elId} ul`);
+//   const item_category = JSON.parse(
+//     localStorage.getItem(elId)
+//   );
 
-  for (let el of item_category) {
-    dropdown.insertAdjacentHTML(
-      "beforeend",
-      `<li><span class="list-item" id=${el}>${el}</span></li>`
-    );
-  }
+//   for (let el of item_category) {
+//     dropdown.insertAdjacentHTML(
+//       "beforeend",
+//       `<li><span class="list-item" id=${el}>${el}</span></li>`
+//     );
+//   }
+// }
+
+function load_section(section_id){
+  const section_dropdowns = document.querySelector(`#${section_id} .dropdown`);
+  return section_dropdowns;
 }
 
 async function getItems() {
@@ -67,6 +72,11 @@ async function getItems() {
 function toggleFilters() {
   const filters = document.getElementsByClassName("filters")[0];
   filters.style.display = filters.style.display == "none" ? "block" : "none";
+}
+
+function resetForm(){
+  const form = document.getElementById("main");
+  form.reset();
 }
 
 getItems();
