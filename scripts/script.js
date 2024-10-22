@@ -47,3 +47,9 @@ document.querySelectorAll(".filter-group").forEach((group) => {
   toggleButton.addEventListener("click", clickKvdratkorToggleBtn);
   filterBody.addEventListener("click", clickFilterBody);
 });
+
+document.querySelectorAll(".min-max").forEach((input) => {
+  input.addEventListener("input", function (event) {
+    this.value = this.value.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+  });
+});
