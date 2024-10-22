@@ -41,14 +41,14 @@ filterGroups.forEach((group) => {
 //   }
 // }
 
-function load_section(section_id){
+function load_section(section_id) {
   const section_dropdowns = document.querySelector(`#${section_id} .dropdown`);
   return section_dropdowns;
 }
 
 async function getItems() {
   let outsideData = null;
-  await fetch("/items.json")
+  await fetch("items.json")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
@@ -62,10 +62,10 @@ async function getItems() {
       outsideData = data;
     })
     .catch((error) => console.error("Error fetching items:", error));
-  
-  console.log(outsideData.sections)
-  for(let section of outsideData.sections){
-    load(section)
+
+  console.log(outsideData.sections);
+  for (let section of outsideData.sections) {
+    load(section);
   }
 }
 
@@ -74,7 +74,7 @@ function toggleFilters() {
   filters.style.display = filters.style.display == "none" ? "block" : "none";
 }
 
-function resetForm(){
+function resetForm() {
   const form = document.getElementById("main");
   form.reset();
 }
