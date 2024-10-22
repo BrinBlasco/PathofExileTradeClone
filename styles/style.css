@@ -193,7 +193,7 @@ input {
 .misc-filters,
 .stat-filters {
   position: relative;
-  width: 100%;
+  width: 50%;
   padding: 0 10px 10px;
 }
 .misc-filters {
@@ -521,3 +521,4 @@ input {
 .selection:focus-within + .dropdown {
   display: block;
 }
+

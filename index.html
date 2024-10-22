@@ -22,6 +22,7 @@
         <img id="image" src="assets/logo.png" alt="#" />
       </a>
     </div>
+    <form action="#" method="post" id="main">
     <div id="trade">
       <div class="navigation">
         <ul class="tab main">
@@ -93,7 +94,8 @@
       </div>
       <div class="filters">
         <div class="misc-filters">
-          <div class="filter-group">
+
+          <div class="filter-group" id="type_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -136,7 +138,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="weapon_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -192,7 +194,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="armour_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -248,7 +250,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="socket_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -289,7 +291,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="requirements">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -352,7 +354,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="map_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -461,7 +463,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="heist_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -598,7 +600,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="sanctum_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -639,7 +641,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="ultimatum_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -659,6 +661,10 @@
                   </div>
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
+                <div class="dropdown" id="challenge_type">
+                  <ul>
+                  </ul>
+                </div>
               </div>
               <div class="filter-stats full">
                 <div class="label">
@@ -669,6 +675,10 @@
                     <i class="fa fa-caret-down"></i>
                   </div>
                   <input type="text" class="filter-tags" placeholder="Any">
+                </div>
+                <div class="dropdown" id="reward_type">
+                  <ul>
+                  </ul>
                 </div>
               </div>
               <div class="filter-stats full">
@@ -681,6 +691,10 @@
                   </div>
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
+                <div class="dropdown" id="required_item">
+                  <ul>
+                  </ul>
+                </div>
               </div>
               <div class="filter-stats full">
                 <div class="label">
@@ -692,11 +706,15 @@
                   </div>
                   <input type="text" class="filter-tags" placeholder="Any">
                 </div>
+                <div class="dropdown" id="reward_item">
+                  <ul>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="miscellaneous_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -967,7 +985,7 @@
             </div>
           </div>
 
-          <div class="filter-group">
+          <div class="filter-group" id="trade_filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -1033,7 +1051,7 @@
 
         </div>
         <div class="stat-filters">
-          <div class="filter-group">
+          <div class="filter-group" id="stat-filters">
             <div class="filter">
               <span class="group-btn">
                 <button class="toggle-btn">
@@ -1061,7 +1079,6 @@
             </div>
           </div>
           <div class="expanded">
-
             <div class="filter-stats">
               <div class="selection add-stat-group">
                 <input type="text" class="filter-tags" placeholder="+ Add Stat Group">
@@ -1081,7 +1098,7 @@
         </div>
 
         <div class="controls-right">
-          <button class="clear-btn">Clear</button>
+          <button class="clear-btn" onclick="resetForm()">Clear</button>
           <button class="toggle-search" onclick="toggleFilters()">
             <span>Hide Filters</span>
             <div>
@@ -1091,7 +1108,7 @@
         </div>
       </div>
     </div>
-
+    </form>
 
   </div>
   </div>
@@ -1106,7 +1123,6 @@
   </div>
 
   <script src="script.js"></script>
-  <script src="getItems.js"></script>
 </body>
 
 </html>
