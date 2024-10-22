@@ -7,11 +7,11 @@
   <title>Trade - Path of Exile</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/styles/style.css" />
-  <link rel="stylesheet" href="/styles/grid.css">
-  <link rel="stylesheet" href="/styles/media.css">
-  <link rel="stylesheet" href="/styles/fonts.css" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/grid.css">
+  <link rel="stylesheet" href="./styles/media.css">
+  <link rel="stylesheet" href="./styles/fonts.css" />
 
 </head>
 
@@ -23,1091 +23,1091 @@
       </a>
     </div>
     <form action="#" method="post" id="main">
-    <div id="trade">
-      <div class="navigation">
-        <ul class="tab main">
-          <li class="menu-search"><a href="#">
-              <div class="adj">
-                <i class="fa fa-search"></i>
-                <span>Search Listed Items</span>
+      <div id="trade">
+        <div class="navigation">
+          <ul class="tab main">
+            <li class="menu-search"><a href="#">
+                <div class="adj">
+                  <i class="fa fa-search"></i>
+                  <span>Search Listed Items</span>
+                </div>
+              </a>
+            </li>
+            <li class="menu-bulk"><a href="#">
+                <div class="adj">
+                  <i class="fa fa-exchange"></i>
+                  <span>Bulk Item Exchange</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul class="tab account">
+            <li class="menu-about">
+              <a href="#">
+                <div class="adj">
+                  <i class="fa fa-question"></i>
+                  <span>About</span>
+                </div>
+              </a>
+            </li>
+            <li class="menu-settings">
+              <a href="#">
+                <div class="adj">
+                  <i class="fa fa-cog"></i>
+                  <span>Settings</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="clr"></div>
+        <div class="search-bar">
+          <div class="search-left">
+            <div class="dropdowns">
+              <input type="text" placeholder="Search Items...">
+              <div class="arrow">
+                <i class="fa fa-caret-down"></i>
               </div>
-            </a>
-          </li>
-          <li class="menu-bulk"><a href="#">
-              <div class="adj">
-                <i class="fa fa-exchange"></i>
-                <span>Bulk Item Exchange</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul class="tab account">
-          <li class="menu-about">
-            <a href="#">
-              <div class="adj">
-                <i class="fa fa-question"></i>
-                <span>About</span>
-              </div>
-            </a>
-          </li>
-          <li class="menu-settings">
-            <a href="#">
-              <div class="adj">
-                <i class="fa fa-cog"></i>
-                <span>Settings</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="clr"></div>
-      <div class="search-bar">
-        <div class="search-left">
-          <div class="dropdowns">
-            <input type="text" placeholder="Search Items...">
-            <div class="arrow">
-              <i class="fa fa-caret-down"></i>
             </div>
+          </div>
+          <div class="search-right">
+            <div class="dropdowns" style="width: 20%;">
+              PC
+              <div class="arrow">
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="dropdowns" style="width: 40%;">
+              Settlers
+              <div class="arrow">
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="dropdowns" style="width: 40%;">
+              Online Only
+              <div class="arrow">
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            </select>
           </div>
         </div>
-        <div class="search-right">
-          <div class="dropdowns" style="width: 20%;">
-            PC
-            <div class="arrow">
-              <i class="fa fa-caret-down"></i>
-            </div>
-          </div>
-          <div class="dropdowns" style="width: 40%;">
-            Settlers
-            <div class="arrow">
-              <i class="fa fa-caret-down"></i>
-            </div>
-          </div>
-          <div class="dropdowns" style="width: 40%;">
-            Online Only
-            <div class="arrow">
-              <i class="fa fa-caret-down"></i>
-            </div>
-          </div>
-          </select>
-        </div>
-      </div>
-      <div class="filters">
-        <div class="misc-filters">
+        <div class="filters">
+          <div class="misc-filters">
 
-          <div class="filter-group" id="type_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk on"></div>
-                </button>
-              </span>
-              <span class="filter-body">Type Filters</span>
-            </div>
-            <div class="expanded">
-              <div class="filter-stats full">
-                <div class="label">
-                  Item Category
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
+            <div class="filter-group" id="type_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk on"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Type Filters</span>
+              </div>
+              <div class="expanded">
+                <div class="filter-stats full">
+                  <div class="label">
+                    Item Category
                   </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown" id="item_category">
-                  <ul>
-                  </ul>
-                </div>
-              </div>
-              <div class="filter-stats full">
-                <div class="label">
-                  Item Rarity
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
                   </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
+                  <div class="dropdown" id="item_category">
+                    <ul>
+                    </ul>
+                  </div>
                 </div>
-                <div class="dropdown" id="item_rarity">
-                  <ul>
-                  </ul>
+                <div class="filter-stats full">
+                  <div class="label">
+                    Item Rarity
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown" id="item_rarity">
+                    <ul>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="filter-group" id="weapon_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Weapon Filters</span>
+            <div class="filter-group" id="weapon_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Weapon Filters</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="label">
+                    Damage
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Attacks per Second
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Critical Chance
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Damage per Second
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Physical DPS
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Elemental DPS
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+
+              </div>
             </div>
-            <div class="expanded off">
-              <div class="filter-stats">
-                <div class="label">
-                  Damage
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Attacks per Second
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Critical Chance
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Damage per Second
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Physical DPS
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Elemental DPS
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
 
+            <div class="filter-group" id="armour_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Armour Filters</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="label">
+                    Armour
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Evasion
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Energy Sheld
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Ward
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Block
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Base Percentile
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+
+              </div>
             </div>
-          </div>
 
-          <div class="filter-group" id="armour_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Armour Filters</span>
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats">
-                <div class="label">
-                  Armour
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Evasion
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
+            <div class="filter-group" id="socket_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Socket Filters</span>
               </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Energy Sheld
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Ward
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Block
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Base Percentile
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-
-            </div>
-          </div>
-
-          <div class="filter-group" id="socket_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Socket Filters</span>
-            </div>
-            <div class="expanded off ">
-              <div class="filter-stats rgbw">
-                <div class="label">
-                  Challenge Type
-                </div>
-
-                <input type="text" class="sockets red" placeholder="R">
-                <input type="text" class="sockets green" placeholder="G">
-                <input type="text" class="sockets blue" placeholder="B">
-                <input type="text" class="sockets white" placeholder="W">
-
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-              </div>
-              <div class="filter-stats rgbw">
-                <div class="label">
-                  Reward Type
-                </div>
-                <div class="socketWrap">
+              <div class="expanded off ">
+                <div class="filter-stats rgbw">
+                  <div class="label">
+                    Challenge Type
+                  </div>
 
                   <input type="text" class="sockets red" placeholder="R">
                   <input type="text" class="sockets green" placeholder="G">
                   <input type="text" class="sockets blue" placeholder="B">
                   <input type="text" class="sockets white" placeholder="W">
+
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                </div>
+                <div class="filter-stats rgbw">
+                  <div class="label">
+                    Reward Type
+                  </div>
+                  <div class="socketWrap">
+
+                    <input type="text" class="sockets red" placeholder="R">
+                    <input type="text" class="sockets green" placeholder="G">
+                    <input type="text" class="sockets blue" placeholder="B">
+                    <input type="text" class="sockets white" placeholder="W">
+                  </div>
+
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-group" id="requirements">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Requirements</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="label">
+                    Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Strength
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Dexterity
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Intelligence
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Character Class
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown half" id="character_class">
+                    <ul>
+                    </ul>
+                  </div>
+
+                  <div class="label hidden">
+                  </div>
+                  <div class="selection hidden">
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
                 </div>
 
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
               </div>
+            </div>
+
+            <div class="filter-group" id="map_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Map Filters</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="label">
+                    Map Tier
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Map Packsize
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Map IIQ
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Map IIR
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Area Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Map Series
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown half right" id="map_series">
+                    <ul>
+                    </ul>
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Blighted Map
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown half" id="blighted_map">
+                    <ul>
+                    </ul>
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Blight-Ravaged Map
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown half right" id="blight_ravaged_map">
+                    <ul>
+                    </ul>
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Map Completion Reward
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown half" id="map_completion_reward">
+                    <ul>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="filter-group" id="heist_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Heist Filters</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="label">
+                    Wings Revelad
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Total Wings
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Escape Routes Revealed
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Total Escape Routes
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Reward Rooms Revealed
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Total Reward Rooms
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats full">
+                  <div class="label">
+                    Contract Objective Value
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                </div>
+
+                <div class="filter-stats">
+                  <div class="label">
+                    Lockpicking Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Brute Force Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Perception Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Demolition Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Counter-Thaum. Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Trap Disarment Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+
+                <div class="filter-stats">
+                  <div class="label">
+                    Agility Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Deception Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Engineering
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+
+                  <div class="label hidden">
+                  </div>
+                  <input type="text" class="min-max hidden" placeholder="min">
+                  <input type="text" class="min-max hidden" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-group" id="sanctum_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Sanctum Filters</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="label">
+                    Reslove
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Maximum Reslove
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Inspiration
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Aureus
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-group" id="ultimatum_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Ultimatum Filters</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats full">
+                  <div class="label">
+                    Challenge Type
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown" id="challenge_type">
+                    <ul>
+                    </ul>
+                  </div>
+                </div>
+                <div class="filter-stats full">
+                  <div class="label">
+                    Reward Type
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown" id="reward_type">
+                    <ul>
+                    </ul>
+                  </div>
+                </div>
+                <div class="filter-stats full">
+                  <div class="label">
+                    Required Item
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown" id="required_item">
+                    <ul>
+                    </ul>
+                  </div>
+                </div>
+                <div class="filter-stats full">
+                  <div class="label">
+                    Reward Unique
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <div class="dropdown" id="reward_item">
+                    <ul>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-group" id="miscellaneous_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Miscellaneous</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="label">
+                    Quality
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Item Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Gem Level
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Gem Experience %
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Transigured Gem
+                  </div>
+                  <div class="selection" style="margin-right: 2px;">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Vaal Gem
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Corpse Type
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Crucible Item
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Fractured Item
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Synthesised Item
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Searing Exarch Item
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Eater of Wordls Item
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Identified
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Corrupted
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Mirrored
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Split
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Crafted
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Veiled
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Foreseeing
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Talisman Tier
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Stored Experience
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Stack Size
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Alternate Art
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- HERE HERE HERE HERE -->
+                  <!-- Tle umes inputi za min in max -->
+                  <div class="label">
+                    Foil Variation
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                  <!-- Tle umes inputi za min in max -->
+                </div>
+                <div class="filter-stats">
+                  <div class="label">
+                    Scourge Tier
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+
+                  <div class="label hidden">
+                  </div>
+                  <input type="text" class="min-max hidden" placeholder="min">
+                  <input type="text" class="min-max hidden" placeholder="max" style="margin-right: 2px;">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="filter-group" id="trade_filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Trade Filters</span>
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats full">
+                  <div class="label">
+                    Seller Account
+                  </div>
+                  <div class="selection">
+                    <input type="text" class="filter-tags" placeholder="Enter Accont Name...">
+                  </div>
+                </div>
+                <div class="filter-stats full">
+                  <div class="label">
+                    Collapse Listings By Account
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any">
+                  </div>
+                </div>
+                <div class="filter-stats full">
+                  <div class="label">
+                    Listed
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Any Time">
+                  </div>
+                </div>
+                <div class="filter-stats full">
+                  <div class="label">
+                    Sale Type
+                  </div>
+                  <div class="selection">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price">
+                  </div>
+                </div>
+                <div class="filter-stats">
+                  <div class="label" style="grid-column: span 4;">
+                    Buyout Price
+                  </div>
+                  <div class="selection" style="grid-column: span 4; margin-right: 0;">
+                    <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price">
+                  </div>
+                  <input type="text" class="min-max" placeholder="min">
+                  <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="stat-filters">
+            <div class="filter-group" id="stat-filters">
+              <div class="filter">
+                <span class="group-btn">
+                  <button class="toggle-btn">
+                    <div class="kvdratk"></div>
+                  </button>
+                </span>
+                <span class="filter-body">Stat Filters</span>
+                <div class="edit">
+                  <i class="fa fa-edit"></i>
+                </div>
+                <div class="close">
+                  <i class="fa fa-close"></i>
+                </div>
+
+              </div>
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="selection full" style="grid-column: span 10;">
+                    <div class="arrow">
+                      <i class="fa fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="filter-tags add-stat-filter" placeholder="+ Add Stat Filter">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="expanded">
+              <div class="filter-stats">
+                <div class="selection add-stat-group">
+                  <input type="text" class="filter-tags" placeholder="+ Add Stat Group">
+                </div>
+              </div>
+
             </div>
           </div>
-
-          <div class="filter-group" id="requirements">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Requirements</span>
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats">
-                <div class="label">
-                  Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Strength
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Dexterity
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Intelligence
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Character Class
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown half" id="character_class">
-                  <ul>
-                  </ul>
-                </div>
-
-                <div class="label hidden">
-                </div>
-                <div class="selection hidden">
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="filter-group" id="map_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Map Filters</span>
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats">
-                <div class="label">
-                  Map Tier
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Map Packsize
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Map IIQ
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Map IIR
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Area Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Map Series
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown half right" id="map_series">
-                  <ul>
-                  </ul>
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Blighted Map
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown half" id="blighted_map">
-                  <ul>
-                  </ul>
-                </div>
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Blight-Ravaged Map
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown half right" id="blight_ravaged_map">
-                  <ul>
-                  </ul>
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Map Completion Reward
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown half" id="map_completion_reward">
-                  <ul>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="filter-group" id="heist_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Heist Filters</span>
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats">
-                <div class="label">
-                  Wings Revelad
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Total Wings
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Escape Routes Revealed
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Total Escape Routes
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Reward Rooms Revealed
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Total Reward Rooms
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats full">
-                <div class="label">
-                  Contract Objective Value
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-              </div>
-
-              <div class="filter-stats">
-                <div class="label">
-                  Lockpicking Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Brute Force Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Perception Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Demolition Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Counter-Thaum. Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Trap Disarment Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-
-              <div class="filter-stats">
-                <div class="label">
-                  Agility Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Deception Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Engineering
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-
-                <div class="label hidden">
-                </div>
-                <input type="text" class="min-max hidden" placeholder="min">
-                <input type="text" class="min-max hidden" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-            </div>
-          </div>
-
-          <div class="filter-group" id="sanctum_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Sanctum Filters</span>
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats">
-                <div class="label">
-                  Reslove
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Maximum Reslove
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Inspiration
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Aureus
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-            </div>
-          </div>
-
-          <div class="filter-group" id="ultimatum_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Ultimatum Filters</span>
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats full">
-                <div class="label">
-                  Challenge Type
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown" id="challenge_type">
-                  <ul>
-                  </ul>
-                </div>
-              </div>
-              <div class="filter-stats full">
-                <div class="label">
-                  Reward Type
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown" id="reward_type">
-                  <ul>
-                  </ul>
-                </div>
-              </div>
-              <div class="filter-stats full">
-                <div class="label">
-                  Required Item
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown" id="required_item">
-                  <ul>
-                  </ul>
-                </div>
-              </div>
-              <div class="filter-stats full">
-                <div class="label">
-                  Reward Unique
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <div class="dropdown" id="reward_item">
-                  <ul>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="filter-group" id="miscellaneous_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Miscellaneous</span>
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats">
-                <div class="label">
-                  Quality
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Item Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Gem Level
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Gem Experience %
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Transigured Gem
-                </div>
-                <div class="selection" style="margin-right: 2px;">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Vaal Gem
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Corpse Type
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Crucible Item
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Fractured Item
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Synthesised Item
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Searing Exarch Item
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Eater of Wordls Item
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Identified
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Corrupted
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Mirrored
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Split
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Crafted
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Veiled
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Foreseeing
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Talisman Tier
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Stored Experience
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Stack Size
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Alternate Art
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- HERE HERE HERE HERE -->
-                <!-- Tle umes inputi za min in max -->
-                <div class="label">
-                  Foil Variation
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-                <!-- Tle umes inputi za min in max -->
-              </div>
-              <div class="filter-stats">
-                <div class="label">
-                  Scourge Tier
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-
-                <div class="label hidden">
-                </div>
-                <input type="text" class="min-max hidden" placeholder="min">
-                <input type="text" class="min-max hidden" placeholder="max" style="margin-right: 2px;">
-              </div>
-
-            </div>
-          </div>
-
-          <div class="filter-group" id="trade_filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Trade Filters</span>
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats full">
-                <div class="label">
-                  Seller Account
-                </div>
-                <div class="selection">
-                  <input type="text" class="filter-tags" placeholder="Enter Accont Name...">
-                </div>
-              </div>
-              <div class="filter-stats full">
-                <div class="label">
-                  Collapse Listings By Account
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any">
-                </div>
-              </div>
-              <div class="filter-stats full">
-                <div class="label">
-                  Listed
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Any Time">
-                </div>
-              </div>
-              <div class="filter-stats full">
-                <div class="label">
-                  Sale Type
-                </div>
-                <div class="selection">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price">
-                </div>
-              </div>
-              <div class="filter-stats">
-                <div class="label" style="grid-column: span 4;">
-                  Buyout Price
-                </div>
-                <div class="selection" style="grid-column: span 4; margin-right: 0;">
-                  <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price">
-                </div>
-                <input type="text" class="min-max" placeholder="min">
-                <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-              </div>
-            </div>
-          </div>
-
         </div>
-        <div class="stat-filters">
-          <div class="filter-group" id="stat-filters">
-            <div class="filter">
-              <span class="group-btn">
-                <button class="toggle-btn">
-                  <div class="kvdratk"></div>
-                </button>
-              </span>
-              <span class="filter-body">Stat Filters</span>
-              <div class="edit">
-                <i class="fa fa-edit"></i>
-              </div>
-              <div class="close">
-                <i class="fa fa-close"></i>
-              </div>
 
-            </div>
-            <div class="expanded off">
-              <div class="filter-stats">
-                <div class="selection full" style="grid-column: span 10;">
-                  <div class="arrow">
-                    <i class="fa fa-caret-down"></i>
-                  </div>
-                  <input type="text" class="filter-tags add-stat-filter" placeholder="+ Add Stat Filter">
-                </div>
-              </div>
-            </div>
+
+        <div class="controls">
+          <div class="controls-left"></div>
+
+          <div class="controls-center">
+            <button class="search-btn">Search</button>
           </div>
-          <div class="expanded">
-            <div class="filter-stats">
-              <div class="selection add-stat-group">
-                <input type="text" class="filter-tags" placeholder="+ Add Stat Group">
-              </div>
-            </div>
 
+          <div class="controls-right">
+            <button class="clear-btn" onclick="resetForm()">Clear</button>
+            <button class="toggle-search" onclick="toggleFilters()">
+              <span>Hide Filters</span>
+              <div>
+                <i class="fa fa-chevron-up"></i>
+              </div>
+            </button>
           </div>
         </div>
       </div>
-
-
-      <div class="controls">
-        <div class="controls-left"></div>
-
-        <div class="controls-center">
-          <button class="search-btn">Search</button>
-        </div>
-
-        <div class="controls-right">
-          <button class="clear-btn" onclick="resetForm()">Clear</button>
-          <button class="toggle-search" onclick="toggleFilters()">
-            <span>Hide Filters</span>
-            <div>
-              <i class="fa fa-chevron-up"></i>
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
     </form>
 
   </div>
