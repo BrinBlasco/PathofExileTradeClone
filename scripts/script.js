@@ -4,18 +4,17 @@ function toggleFilters() {
 }
 
 function resetForm() {
-  const form = document.getElementById("main");
+  const form = document.getElementById("mainForm");
   form.reset();
 }
 
-document.getElementById("main").addEventListener("submit", (e) => {
+document.getElementById("mainForm").addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
 document.querySelectorAll(".selection").forEach((selection) => {
-  selection.addEventListener("click", (e) => {
+  selection.addEventListener("click", () => {
     const input = selection.querySelector("input");
-    console.log(e);
     if (input) {
       input.focus();
     }

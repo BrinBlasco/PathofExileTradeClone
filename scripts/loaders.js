@@ -20,7 +20,7 @@ function load_section(section_id) {
 
 async function getItems() {
   let outsideData = null;
-  await fetch("./items.json")
+  await fetch("scripts/items.json")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
