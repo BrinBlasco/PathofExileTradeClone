@@ -307,6 +307,10 @@ input {
   cursor: pointer;
   color: var(--font-color);
 }
+.controls-right .toggle-search i.rotated {
+  transform: rotate(180deg);
+  margin-top: 4px;
+}
 .controls-right span,
 .controls-right button {
   font-size: 13px;

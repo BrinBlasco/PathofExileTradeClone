@@ -1,5 +1,14 @@
 function toggleFilters() {
   const filters = document.getElementsByClassName("filters")[0];
+  const buttonText = document.querySelector(
+    ".controls-right .toggle-search span"
+  );
+  const buttonArrow = document.querySelector(
+    ".controls-right .toggle-search i"
+  );
+  buttonText.textContent =
+    buttonText.textContent == "Show Filters" ? "Hide Filters" : "Show Filters";
+  buttonArrow.classList.toggle("rotated");
   filters.style.display = filters.style.display == "none" ? "block" : "none";
 }
 
