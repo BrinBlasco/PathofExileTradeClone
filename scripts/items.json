@@ -1,6 +1,17 @@
 {
-  "sections" : ["items", "type_filters", "requirements", "map_filters", "heist_filters", "ultimatum_filters", "miscellaneous", "trade_filters", "stat_filters", "stat_group"],
-  
+  "sections": [
+    "all_items",
+    "type_filters",
+    "requirements",
+    "map_filters",
+    "heist_filters",
+    "ultimatum_filters",
+    "miscellaneous_filters",
+    "trade_filters",
+    "stat_filters",
+    "stat_group"
+  ],
+
   "items": [
     "Accessories",
     "Blue Pearl Amulet",

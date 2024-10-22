@@ -281,6 +281,7 @@ input {
   border: 1px solid #4c4c7d;
   color: var(--font-color);
   cursor: pointer;
+  font-size: 13px;
 }
 .controls-center .search-btn:hover {
   background-color: #133d63;
@@ -305,6 +306,10 @@ input {
   border: 1px solid #4c4c7d;
   cursor: pointer;
   color: var(--font-color);
+}
+.controls-right span,
+.controls-right button {
+  font-size: 13px;
 }
 .controls-right .toggle-search:hover {
   background-color: #133d62;
@@ -521,4 +526,3 @@ input {
 .selection:focus-within + .dropdown {
   display: block;
 }
-
