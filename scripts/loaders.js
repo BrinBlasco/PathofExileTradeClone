@@ -1,22 +1,35 @@
-// function load(elId) {
-//   const dropdown = document.querySelector(`#${elId} ul`);
-//   const item_category = JSON.parse(
-//     localStorage.getItem(elId)
-//   );
+function load(elId) {
+  const dropdown = document.querySelector(`#${elId} ul`);
+  const item_category = JSON.parse(
+    localStorage.getItem(elId)
+  );
 
-//   for (let el of item_category) {
-//     dropdown.insertAdjacentHTML(
-//       "beforeend",
-//       `<li><span class="list-item" id=${el}>${el}</span></li>`
-//     );
-//   }
-// }
+  for (let el of item_category) {
+    dropdown.insertAdjacentHTML(
+      "beforeend",
+      `<li><span class="list-item" id=${el}>${el}</span></li>`
+    );
+  }
+}
 
 function load_section(section_id) {
-  const section_dropdowns = document.querySelector(`#${section_id} .dropdown`);
-  console.log(section_dropdowns, section_id);
-  return section_dropdowns;
+  const section_data = JSON.parse(localStorage.getItem(section_id));
+  console.log(section_data);
+
+  for(let section in section_data){
+    const section_dropdown = document.querySelector(`#${section_id} #${section}.dropdown ul`);
+    const section_data = JSON.parse(localStorage.getItem(section));
+
+    for (let element of section_data) {
+      section_dropdown.insertAdjacentHTML(
+        "beforeend",
+        `<li><span class="list-item" id=${element}>${element}</span></li>`
+      );
+    }
+  }
+
 }
+
 
 async function getItems() {
   let outsideData = null;
@@ -35,10 +48,16 @@ async function getItems() {
     })
     .catch((error) => console.error("Error fetching items:", error));
 
-  console.log(outsideData.sections);
-  for (let section of outsideData.sections) {
-    load_section(section);
-  }
+  // console.log(outsideData.sections);
+  // for (let section of outsideData.sections) {
+  //   load_section(section);
+  // }
+  load_section("type_filters");
+  load_section("character_class");
+  load_section("type_filters");
+  load_section("blighted_map");
+  load_section("blight_ravaged_map");
+  load_section("map_completion_reward");
 }
 
 getItems();

@@ -12,7 +12,7 @@
     "stat_group"
   ],
 
-  "items": [
+  "all_items": [
     "Accessories",
     "Blue Pearl Amulet",
     "Marble Amulet",
@@ -2177,7 +2177,7 @@
       "Goldrim"
     ]
   },
-  "miscellaneous": {
+  "miscellaneous_filters": {
     "transfigured_gems": ["Any", "Yes", "No"],
     "vaal_gem": ["Any", "Yes", "No"],
     "corpse_type": [
