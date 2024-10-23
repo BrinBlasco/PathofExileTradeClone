@@ -644,7 +644,7 @@
       "Legacy"
     ],
     "blighted_map": ["Any", "Yes", "No"],
-    "blighted_ravaged_map": ["Any", "Yes", "No"],
+    "blight_ravaged_map": ["Any", "Yes", "No"],
     "map_completion_reward": [
       "Any",
       "Abberath's Horn",
