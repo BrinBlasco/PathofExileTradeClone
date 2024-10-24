@@ -5,8 +5,7 @@ function load_section(section_id) {
   for(let section in section_data){
     const section_dropdown = document.querySelector(`#${section_id} #${section}.dropdown ul`);
     const section_items = section_data[section];
-    console.log(section_items);
-
+    
     for (let element of section_items) {
       section_dropdown.insertAdjacentHTML(
         "beforeend",
@@ -38,14 +37,30 @@ async function getItems() {
   // for (let section of outsideData.sections) {
   //   load_section(section);
   // }
-
-  load_section("type_filters");
-  load_section("requirements");
-  load_section("map_filters");
-  load_section("heist_filters");
-  load_section("ultimatum_filters");
-  load_section("miscellaneous_filters");
-  load_section("map_completion_reward");
+  try {
+    load_section("type_filters");
+    load_section("requirements");
+    load_section("map_filters");
+    load_section("heist_filters");
+    load_section("ultimatum_filters");
+    load_section("miscellaneous_filters");
+    load_section("map_completion_reward");
+  } catch (error) {
+    console.log(error, " Continuing...")    
+  }
+  
+  const spans = document.querySelectorAll(".dropdown ul li .list-item")
+  console.log(spans);
+  spans.forEach(span => {
+    console.log(span);
+    span.addEventListener('click', (e) => {
+      console.log(e);
+      const input = document.querySelector(".selection .filter-tags");
+      console.log(input);
+      console.log(span.textContent);
+      input.placeholder = span.textContent;
+    });
+  });
 }
 
 getItems();
