@@ -1,33 +1,18 @@
-function load(elId) {
-  const dropdown = document.querySelector(`#${elId} ul`);
-  const item_category = JSON.parse(
-    localStorage.getItem(elId)
-  );
-
-  for (let el of item_category) {
-    dropdown.insertAdjacentHTML(
-      "beforeend",
-      `<li><span class="list-item" id=${el}>${el}</span></li>`
-    );
-  }
-}
 
 function load_section(section_id) {
   const section_data = JSON.parse(localStorage.getItem(section_id));
-  console.log(section_data);
 
   for(let section in section_data){
     const section_dropdown = document.querySelector(`#${section_id} #${section}.dropdown ul`);
-    const section_data = JSON.parse(localStorage.getItem(section));
-
-    for (let element of section_data) {
+    const section_items = section_data[section];
+    
+    for (let element of section_items) {
       section_dropdown.insertAdjacentHTML(
         "beforeend",
         `<li><span class="list-item" id=${element}>${element}</span></li>`
       );
     }
   }
-
 }
 
 
@@ -52,12 +37,30 @@ async function getItems() {
   // for (let section of outsideData.sections) {
   //   load_section(section);
   // }
-  load_section("type_filters");
-  load_section("character_class");
-  load_section("type_filters");
-  load_section("blighted_map");
-  load_section("blight_ravaged_map");
-  load_section("map_completion_reward");
+  try {
+    load_section("type_filters");
+    load_section("requirements");
+    load_section("map_filters");
+    load_section("heist_filters");
+    load_section("ultimatum_filters");
+    load_section("miscellaneous_filters");
+    load_section("map_completion_reward");
+  } catch (error) {
+    console.log(error, " Continuing...")    
+  }
+  
+  const spans = document.querySelectorAll(".dropdown ul li .list-item")
+  console.log(spans);
+  spans.forEach(span => {
+    console.log(span);
+    span.addEventListener('click', (e) => {
+      console.log(e);
+      const input = document.querySelector(".selection .filter-tags");
+      console.log(input);
+      console.log(span.textContent);
+      input.placeholder = span.textContent;
+    });
+  });
 }
 
 getItems();

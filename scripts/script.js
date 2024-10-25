@@ -14,7 +14,7 @@ function toggleFilters() {
   buttonText.textContent =
     buttonText.textContent == "Show Filters" ? "Hide Filters" : "Show Filters";
   buttonArrow.classList.toggle("rotated");
-  filters.style.display = filters.style.display == "none" ? "block" : "none";
+  filters.style.display = filters.style.display == "none" ? "flex" : "none";
 }
 
 function resetForm() {
@@ -77,3 +77,5 @@ document.querySelectorAll(".min-max").forEach((input) => {
     this.value = this.value.replace(/[^0-9]/g, ""); 
   });
 });
+
+

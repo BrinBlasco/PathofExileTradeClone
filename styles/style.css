@@ -494,7 +494,7 @@ input {
 .dropdown {
   display: none;
   position: absolute;
-  margin: 31px 0 36px 0;
+  margin-top: 31px;
   max-height: calc(9 * 30px);
   width: calc(100% - 74px);
   z-index: 1;
