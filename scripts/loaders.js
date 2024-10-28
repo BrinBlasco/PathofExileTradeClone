@@ -48,19 +48,6 @@ async function getItems() {
   } catch (error) {
     console.log(error, " Continuing...")    
   }
-  
-  const spans = document.querySelectorAll(".dropdown ul li .list-item")
-  console.log(spans);
-  spans.forEach(span => {
-    console.log(span);
-    span.addEventListener('click', (e) => {
-      console.log(e);
-      const input = document.querySelector(".selection .filter-tags");
-      console.log(input);
-      console.log(span.textContent);
-      input.placeholder = span.textContent;
-    });
-  });
 }
 
 getItems();
