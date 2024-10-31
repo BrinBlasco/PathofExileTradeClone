@@ -22,7 +22,7 @@
         <img id="image" src="assets/logo.png" alt="#" />
       </a>
     </div>
-    <form action="#" method="post" id="mainForm">
+    <form action="#" method="post" id="main-form">
       <div id="trade">
         <div class="navigation">
           <ul class="tab main">
@@ -63,40 +63,64 @@
         <div class="clr"></div>
         <div class="search-bar">
           <div class="search-left">
-            <div class="dropdowns" id="all_items">
+            <div class="dropdowns" id="all_items" style="position: relative;">
               <input type="text" placeholder="Search Items...">
               <div class="arrow">
                 <i class="fa fa-caret-down"></i>
               </div>
-              <div class="dropdown" id="items">
+              <div class="dropdown" id="all_items" style="display: none; top: 0; width: 100%;">
                 <ul>
-
+                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">asdf</span></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="search-right">
             <div class="dropdowns" style="width: 20%;">
-              PC
+              <span>PC</span>
               <div class="arrow">
                 <i class="fa fa-caret-down"></i>
               </div>
-            </div>
-            <div class="dropdowns" style="width: 40%;">
-              Settlers
-              <div class="arrow">
-                <i class="fa fa-caret-down"></i>
+              <div class="dropdown" id="all_items" style="display: none; top: 0; width: 100%;">
+                <ul>
+                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">asdf</span></li>
+                </ul>
               </div>
             </div>
             <div class="dropdowns" style="width: 40%;">
-              Online Only
+              <span>Settlers</span>
               <div class="arrow">
                 <i class="fa fa-caret-down"></i>
+              </div>
+              <div class="dropdown" id="all_items" style="display: none; top: 0; width: 100%;">
+                <ul>
+                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">asdf</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="dropdowns" style="width: 40%;">
+              <span>Online Only</span>
+              <div class="arrow">
+                <i class="fa fa-caret-down"></i>
+              </div>
+              <div class="dropdown" id="all_items" style="display: none; top: 0; width: 100%;">
+                <ul>
+                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">asdf</span></li>
+                </ul>
               </div>
             </div>
             </select>
           </div>
         </div>
+        
         <div class="filters">
           <div class="misc-filters">
 
@@ -239,7 +263,7 @@
                 </div>
                 <div class="filter-stats">
                   <div class="label">
-                    Block
+                    none
                   </div>
                   <input type="text" class="min-max" placeholder="min">
                   <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
@@ -770,7 +794,7 @@
                     </div>
                     <input type="text" class="filter-tags" placeholder="Any">
                   </div>
-                  <div class="dropdown half" id="transfigured_gem">
+                  <div class="dropdown half" id="transfigured_gems">
                     <ul></ul>
                   </div>
                   <div class="label">
@@ -981,7 +1005,6 @@
                   </div>
                   <input type="text" class="min-max" placeholder="min">
                   <input type="text" class="min-max" placeholder="max" style="margin-right: 2px;">
-                  <!-- HERE HERE HERE HERE -->
 
                   <div class="label">
                     Stack Size
@@ -1062,7 +1085,7 @@
                     </div>
                     <input type="text" class="filter-tags" placeholder="Any">
                   </div>
-                  <div class="dropdown" id="collapse_listing_by_account">
+                  <div class="dropdown" id="collapse_listings_by_account">
                     <ul></ul>
                   </div>
                 </div>
@@ -1112,11 +1135,12 @@
 
           </div>
           <div class="stat-filters">
-            <div class="filter-group" id="stat_filters">
+
+            <div class="filter-group" id="stats">
               <div class="filter">
                 <span class="group-btn">
                   <button class="toggle-btn">
-                    <div class="kvdratk"></div>
+                    <div class="kvdratk on"></div>
                   </button>
                 </span>
                 <span class="filter-body">Stat Filters</span>
@@ -1126,29 +1150,32 @@
                 <div class="close">
                   <i class="fa fa-close"></i>
                 </div>
-
               </div>
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="selection full" style="grid-column: span 10;">
+              <div class="expanded" >
+                <div class="filter-stats" style="position: relative;">
+                  <div class="selection full">
                     <div class="arrow">
                       <i class="fa fa-caret-down"></i>
                     </div>
                     <input type="text" class="filter-tags add-stat-filter" placeholder="+ Add Stat Filter">
                   </div>
-                  <div class="dropdown" id="stat_filters">
+                  <div class="dropdown" id="stat_filters" style="margin-left: 3px; width: calc(100% - 8px);">
                     <ul></ul>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="expanded">
-              <div class="filter-stats" id="stat_group">
-                <div class="selection add-stat-group">
-                  <input type="text" class="filter-tags" placeholder="+ Add Stat Group">
-                </div>
-                <div class="dropdown" id="stat_group">
-                  <ul></ul>
+            
+
+            <div class="filter-group">
+              <div class="expanded off">
+                <div class="filter-stats">
+                  <div class="selection add-stat-group">
+                    <input type="text" class="filter-tags" placeholder="+ Add Stat Group">
+                  </div>
+                  <div class="dropdown" id="stat_group">
+                    <ul></ul>
+                  </div>
                 </div>
               </div>
 

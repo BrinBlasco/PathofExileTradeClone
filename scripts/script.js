@@ -1,7 +1,7 @@
 
 
 function toggleFilters() {
-  const filters = document.getElementsByClassName("filters")[0];
+  const filters = document.querySelector(".filters");
   const buttonText = document.querySelector(
     ".controls-right .toggle-search span"
   );
@@ -11,15 +11,15 @@ function toggleFilters() {
   buttonText.textContent =
     buttonText.textContent == "Show Filters" ? "Hide Filters" : "Show Filters";
   buttonArrow.classList.toggle("rotated");
-  filters.style.display = filters.style.display == "flex" ? "none" : filters.style.display;
+  filters.style.display = filters.style.display != "flex" ? "flex" : "none";
 }
 
 function resetForm() {
-  const form = document.getElementById("mainForm");
+  const form = document.getElementById("main-form");
   form.reset();
 }
 
-document.getElementById("mainForm").addEventListener("submit", (e) => {
+document.getElementById("main-form").addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
@@ -31,8 +31,9 @@ document.querySelectorAll(".filter-group").forEach((group) => {
 
   function clickKvdratkorToggleBtn() {
     kvdratk.classList.toggle("on");
-    if (expandedDiv.classList.contains("off"))
+    if (expandedDiv.classList.contains("off")){
       expandedDiv.classList.remove("off");
+    }
     else {
       expandedDiv.classList.toggle("off");
     }

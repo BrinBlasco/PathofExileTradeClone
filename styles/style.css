@@ -431,6 +431,7 @@ input {
 
 .selection.full {
   width: 98.5%;
+  grid-column: span 10 !important;
 }
 .filter-tags.add-stat-filter {
   width: 100%;
@@ -527,6 +528,6 @@ input {
   background-color: #465260;
   font-weight: 1000;
 }
-.dropdown.on{
+.selection:focus-within + .dropdown{
   display: block;
 }
