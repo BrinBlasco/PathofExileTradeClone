@@ -9,7 +9,7 @@ function load_section(section_id) {
     for (let element of section_items) {
       section_dropdown.insertAdjacentHTML(
         "beforeend",
-        `<li><span class="list-item" id=${element}>${element}</span></li>`
+        `<li><span class="list-item" id="${element}">${element}</span></li>`
       );
     }
   }
@@ -33,10 +33,6 @@ async function getItems() {
     })
     .catch((error) => console.error("Error fetching items:", error));
 
-  // console.log(outsideData.sections);
-  // for (let section of outsideData.sections) {
-  //   load_section(section);
-  // }
   try {
     load_section("type_filters");
     load_section("requirements");
@@ -44,7 +40,9 @@ async function getItems() {
     load_section("heist_filters");
     load_section("ultimatum_filters");
     load_section("miscellaneous_filters");
-    load_section("map_completion_reward");
+    load_section("trade_filters");
+    load_section("stats");
+
   } catch (error) {
     console.log(error, " Continuing...")    
   }
