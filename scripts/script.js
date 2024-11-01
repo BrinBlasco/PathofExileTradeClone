@@ -13,7 +13,6 @@ function toggleFilters() {
   filters.style.display = filters.style.display != "flex" ? "flex" : "none";
 }
 function toggleDropdown(el){
-  console.log(el.id);
   let dropdown = document.querySelector(`#${el.id} .dropdown`);
   dropdown.style.display = dropdown.style.display == "block" ? "none" : "block";
 }
