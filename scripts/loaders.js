@@ -2,7 +2,7 @@
 function load_section(section_id) {
   const section_data = JSON.parse(localStorage.getItem(section_id));
 
-  for(let section in section_data){
+  for(const section in section_data){
     const section_dropdown = document.querySelector(`#${section_id} #${section}.dropdown ul`);
     const section_items = section_data[section];
     
@@ -14,7 +14,17 @@ function load_section(section_id) {
     }
   }
 }
+function load(dropdown_id) {
+  const dropdown_data = JSON.parse(localStorage.getItem(dropdown_id));
+  const dropdown = document.querySelector(`#${dropdown_id}.dropdown ul`);
 
+  for (const element of dropdown_data){
+    dropdown.insertAdjacentHTML(
+      "beforeend",
+      `<li><span class="list-item" id="${element}">${element}</span></li>`
+    );
+  }
+}
 
 async function getItems() {
   let outsideData = null;
@@ -42,6 +52,10 @@ async function getItems() {
     load_section("miscellaneous_filters");
     load_section("trade_filters");
     load_section("stats");
+
+    load("all_items");
+    load("stat_group")
+
 
   } catch (error) {
     console.log(error, " Continuing...")    

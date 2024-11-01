@@ -166,6 +166,7 @@ input {
   background-color: var(--input-backgrounds);
   border-right: 1px solid black;
   cursor: pointer;
+  user-select: none;
 }
 
 .dropdowns input {
@@ -183,6 +184,12 @@ input {
 }
 .dropdowns input:focus::placeholder {
   color: var(--placeholder-color-focused);
+}
+.dropdowns:focus-within .dropdown{
+  display: block;
+}
+.dropdowns:focus-within .fa {
+  transform: rotate(180deg);
 }
 
 .filters {
@@ -384,6 +391,7 @@ input {
   text-align: center;
   color: var(--font-color);
   line-height: 24px;
+  
 }
 
 .fa {

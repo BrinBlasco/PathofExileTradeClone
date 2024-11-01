@@ -63,57 +63,55 @@
         <div class="clr"></div>
         <div class="search-bar">
           <div class="search-left">
-            <div class="dropdowns" id="all_items" style="position: relative;">
+            <div class="dropdowns" style="position: relative;">
               <input type="text" placeholder="Search Items...">
               <div class="arrow">
                 <i class="fa fa-caret-down"></i>
               </div>
-              <div class="dropdown" id="all_items" style="display: none; top: 0; width: 100%;">
+              <div class="dropdown" id="all_items" style="top: 0; width: 100%;">
                 <ul>
-                  <li><span class="list-item">asdf</span></li>
-                  <li><span class="list-item">asdf</span></li>
-                  <li><span class="list-item">asdf</span></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="search-right">
-            <div class="dropdowns" style="width: 20%;">
+            <div class="dropdowns" id="platform" style="width: 20%;" onclick="toggleDropdown(this);">
               <span>PC</span>
               <div class="arrow">
                 <i class="fa fa-caret-down"></i>
               </div>
-              <div class="dropdown" id="all_items" style="display: none; top: 0; width: 100%;">
+              <div class="dropdown" style="top: 0; width: 100%;">
                 <ul>
-                  <li><span class="list-item">asdf</span></li>
-                  <li><span class="list-item">asdf</span></li>
-                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">PC</span></li>
+                  <li><span class="list-item">Xbox</span></li>
+                  <li><span class="list-item">Sony</span></li>
                 </ul>
               </div>
             </div>
-            <div class="dropdowns" style="width: 40%;">
+            <div class="dropdowns" id="league" style="width: 40%;" onclick="toggleDropdown(this);">
               <span>Settlers</span>
               <div class="arrow">
                 <i class="fa fa-caret-down"></i>
               </div>
-              <div class="dropdown" id="all_items" style="display: none; top: 0; width: 100%;">
+              <div class="dropdown" style="top: 0; width: 100%;">
                 <ul>
-                  <li><span class="list-item">asdf</span></li>
-                  <li><span class="list-item">asdf</span></li>
-                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">Settlers</span></li>
+                  <li><span class="list-item">Hardcore Settlers</span></li>
+                  <li><span class="list-item">Standard</span></li>
+                  <li><span class="list-item">Hardcore Standard</span></li>
                 </ul>
               </div>
             </div>
-            <div class="dropdowns" style="width: 40%;">
+            <div class="dropdowns" id="status" style="width: 40%; scrollbar-width: none;" onclick="toggleDropdown(this);">
               <span>Online Only</span>
               <div class="arrow">
                 <i class="fa fa-caret-down"></i>
               </div>
-              <div class="dropdown" id="all_items" style="display: none; top: 0; width: 100%;">
+              <div class="dropdown" style="top: 0; width: 100%;">
                 <ul>
-                  <li><span class="list-item">asdf</span></li>
-                  <li><span class="list-item">asdf</span></li>
-                  <li><span class="list-item">asdf</span></li>
+                  <li><span class="list-item">Online Only</span></li>
+                  <li><span class="list-item">Online in Leauge</span></li>
+                  <li><span class="list-item">Any</span></li>
                 </ul>
               </div>
             </div>
@@ -1151,7 +1149,7 @@
                   <i class="fa fa-close"></i>
                 </div>
               </div>
-              <div class="expanded" >
+              <div class="expanded">
                 <div class="filter-stats" style="position: relative;">
                   <div class="selection full">
                     <div class="arrow">
@@ -1167,13 +1165,17 @@
             </div>
             
 
-            <div class="filter-group">
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="selection add-stat-group">
+            <div class="filter-group" style="position: relative;">
+              <div class="expanded" style="position: relative;">
+                <div class="filter-stats" style="position: relative;">
+                  <div class="selection add-stat-group" style="margin-right: 5px; position: relative;">
                     <input type="text" class="filter-tags" placeholder="+ Add Stat Group">
                   </div>
-                  <div class="dropdown" id="stat_group">
+                  <div class="dropdown" id="stat_group" style="
+                    margin: 64px 0 0 calc(40% + 3px);
+                    width: calc(((100% - 72px) / 10) * 7 - 24px);
+                  "
+                  >
                     <ul></ul>
                   </div>
                 </div>
