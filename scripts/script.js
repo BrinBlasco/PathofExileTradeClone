@@ -1,5 +1,4 @@
 
-
 function toggleFilters() {
   const filters = document.querySelector(".filters");
   const buttonText = document.querySelector(
@@ -12,6 +11,11 @@ function toggleFilters() {
     buttonText.textContent == "Show Filters" ? "Hide Filters" : "Show Filters";
   buttonArrow.classList.toggle("rotated");
   filters.style.display = filters.style.display != "flex" ? "flex" : "none";
+}
+function toggleDropdown(el){
+  console.log(el.id);
+  let dropdown = document.querySelector(`#${el.id} .dropdown`);
+  dropdown.style.display = dropdown.style.display == "block" ? "none" : "block";
 }
 
 function resetForm() {
