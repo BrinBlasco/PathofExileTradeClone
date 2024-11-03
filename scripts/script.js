@@ -49,13 +49,26 @@ document.querySelectorAll(".filter-group").forEach((group) => {
       expandedDiv.classList.toggle("off");
     }
   }
-
-  toggleButton.addEventListener("click", clickKvdratkorToggleBtn);
-  filterBody.addEventListener("click", clickFilterBody);
+  try {
+    toggleButton.addEventListener("click", clickKvdratkorToggleBtn);
+    filterBody.addEventListener("click", clickFilterBody);  
+  } catch (error) {
+    console.log(error); 
+  }
 });
 
-document.querySelectorAll(".min-max").forEach((input) => {
-  input.addEventListener("input", (e) => {
-    this.value = this.value.replace(/[^0-9]/g, ""); 
+
+document.querySelectorAll('.min-max').forEach(el => {
+  el.addEventListener('input', (e) => {
+      e.target.value = e.target.value.replace(/[^0-9]/g, '');
+      if (parseInt(e.target.value) > 999999) e.target.value = '999999';
+  });
+});
+
+
+document.querySelectorAll('.min, .max').forEach(el => {
+  el.addEventListener('input', (e) => {
+      e.target.value = e.target.value.replace(/[^0-9]/g, ''); 
+      if (parseInt(e.target.value) > 99999) e.target.value = '99999';
   });
 });
