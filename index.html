@@ -1068,14 +1068,14 @@
                     Seller Account
                   </div>
                   <div class="selection">
-                    <input type="text" class="filter-tags" placeholder="Enter Accont Name..." name="seller-account" autocomplete="off">
+                    <input type="text" class="filter-tags" placeholder="Enter Account Name..." name="seller-account" autocomplete="off">
                   </div>
                 </div>
                 <div class="filter-stats full">
                   <div class="label">
                     Collapse Listings By Account
                   </div>
-                  <div class="selection">
+                  <div class="selec:tion">
                     <div class="arrow">
                       <i class="fa fa-caret-down"></i>
                     </div>
@@ -1118,7 +1118,7 @@
                     Buyout Price
                   </div>
                   <div class="selection" style="grid-column: span 4; margin-right: 0;">
-                    <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price" name="buyout-price" autocomplete="off">
+                    <input type="text" class="filter-tags" placeholder="Chaos Orb Equivalent" name="buyout-price" autocomplete="off">
                   </div>
                   <div class="dropdown" id="buyout_price">
                     <ul></ul>
@@ -1192,8 +1192,8 @@
           </div>
 
           <div class="controls-right">
-            <button class="clear-btn" onclick="resetForm()">Clear</button>
-            <button class="toggle-search" onclick="toggleFilters()">
+            <button class="clear-btn" onclick="window.location.reload()">Clear</button>
+            <button id="toggle-filters" class="toggle-search">
               <span>Hide Filters</span>
               <div>
                 <i class="fa fa-chevron-up"></i>
@@ -1215,9 +1215,50 @@
         Notice</a><br>
     </span>
   </div>
-
+  
   <script src="scripts/script.js"></script>
   <script src="scripts/loaders.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const dropdownContainers = document.querySelectorAll(".expanded");
+
+      dropdownContainers.forEach(container => {
+
+        const inputs = container.querySelectorAll(".selection");
+        const dropdowns = container.querySelectorAll(".dropdown");
+
+        inputs.forEach((input, index) => {
+        const dropdown = dropdowns[index]; // Match dropdown to the corresponding input
+
+        if (dropdown) {
+          dropdown.classList.remove("show");
+
+          input.addEventListener("click", (event_input) => {
+            event_input.stopPropagation();
+            dropdown.classList.toggle("show");
+
+            const options = dropdown.querySelectorAll("span.list-item");
+
+            document.addEventListener("click", () => {
+              dropdown.classList.remove("show");
+            }, { once: true });
+
+            options.forEach(option => {
+              option.addEventListener("click", (event_option) => {
+                event_option.stopPropagation();
+                input.querySelector("input").placeholder = option.innerText;
+                dropdown.classList.remove("show");
+            });
+          });
+        });
+      }
+
+    });
+  });
+});
+  </script>
 </body>
 
 </html>

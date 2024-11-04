@@ -536,6 +536,15 @@ input {
   background-color: #465260;
   font-weight: 1000;
 }
-.selection:focus-within + .dropdown{
+/* .selection:focus-within + .dropdown{
   display: block;
+} */
+.dropdown {
+  display: none;
+}
+.dropdown.show {
+  display: block;
+}
+.selection.not-empty {
+  border: 1px solid #a0a0d0;
 }
