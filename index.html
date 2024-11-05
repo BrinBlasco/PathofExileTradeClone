@@ -5,14 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trade - Path of Exile</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="styles/style.css" />
-  <link rel="stylesheet" href="styles/grid.css">
-  <link rel="stylesheet" href="styles/media.css">
-  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/style.css"/>
+  <link rel="stylesheet" href="styles/grid.css"/>
+  <link rel="stylesheet" href="styles/media.css"/>
+  <link rel="stylesheet" href="styles/fonts.css"/>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 </head>
 
 <body>
@@ -1075,7 +1077,7 @@
                   <div class="label">
                     Collapse Listings By Account
                   </div>
-                  <div class="selec:tion">
+                  <div class="selection">
                     <div class="arrow">
                       <i class="fa fa-caret-down"></i>
                     </div>
@@ -1207,7 +1209,7 @@
   </div>
   </div>
 
-  <div class="bottom" style="margin-top: -40px;">
+  <div class="bottom" style="padding-bottom: 20px;">
     <span class="copyright">© 2010 - 2024 <a href="http://www.grindinggear.com" style="color: #444;">Grinding Gear
         Games</a></span><br>
     <span class="legal">
@@ -1218,46 +1220,75 @@
   
   <script src="scripts/script.js"></script>
   <script src="scripts/loaders.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
 
-      const dropdownContainers = document.querySelectorAll(".expanded");
+    const form = document.getElementById("main-form");
+    form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const jsonData = {};
 
-      dropdownContainers.forEach(container => {
-
-        const inputs = container.querySelectorAll(".selection");
-        const dropdowns = container.querySelectorAll(".dropdown");
-
-        inputs.forEach((input, index) => {
-        const dropdown = dropdowns[index]; // Match dropdown to the corresponding input
-
-        if (dropdown) {
-          dropdown.classList.remove("show");
-
-          input.addEventListener("click", (event_input) => {
-            event_input.stopPropagation();
-            dropdown.classList.toggle("show");
-
-            const options = dropdown.querySelectorAll("span.list-item");
-
-            document.addEventListener("click", () => {
-              dropdown.classList.remove("show");
-            }, { once: true });
-
-            options.forEach(option => {
-              option.addEventListener("click", (event_option) => {
-                event_option.stopPropagation();
-                input.querySelector("input").placeholder = option.innerText;
-                dropdown.classList.remove("show");
-            });
-          });
+    try {
+        formData.forEach((value, key) => {
+            const inputElements = form.querySelectorAll(`[name='${key}']`);
+            
+            if (inputElements.length > 1) {
+                const values = [];
+                inputElements.forEach(input => {
+                    if (value !== "" && !defaultPlaceholders.includes(input.placeholder)) {
+                        values.push(value);
+                    }
+                });
+                if (values.length > 0) {
+                    jsonData[key] = values;
+                }
+            } else {
+                const inputElement = inputElements[0];
+                
+                if (inputElement) {
+                    const isMinMax = inputElement.classList.contains('min-max');
+                    const isPlaceholderExcluded = defaultPlaceholders.includes(inputElement.placeholder);
+                    
+                    if (isMinMax) {
+                        if (value !== "" && !isPlaceholderExcluded) {
+                            jsonData[key] = value;
+                        }
+                    } else {
+                        const finalValue = value !== "" ? value : inputElement.placeholder;
+                        if (finalValue && !isPlaceholderExcluded) {
+                            jsonData[key] = finalValue;
+                        }
+                    }
+                }
+            }
         });
-      }
+    } catch (error) {
+        console.log("Error processing the form data:", error);
+    }
 
+    console.log("JSON Data:", jsonData);
+    
+    const jsonString = JSON.stringify(jsonData);
+    // You can send the jsonString via an AJAX request or do further processing
+        
+        Swal.fire({
+          title: 'Searched For:',
+          text: `${jsonString}`,  
+          confirmButtonText: 'Cool',
+          background: '#000',
+          color: '#e2e2e2',
+          didOpen: () => {
+            const confirmButton = Swal.getConfirmButton();
+            confirmButton.style.backgroundColor = '#0f304d';
+            confirmButton.style.borderRadius = '0';
+            confirmButton.style.border = '1px solid #4c4c7d';      
+            confirmButton.style.color = 'white';               
+          }
+        })
     });
-  });
-});
+
   </script>
 </body>
 

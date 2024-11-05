@@ -44,6 +44,7 @@ async function getItems() {
     .catch((error) => console.error("Error fetching items:", error));
 
   try {
+
     load_section("type_filters");
     load_section("requirements");
     load_section("map_filters");
@@ -56,10 +57,11 @@ async function getItems() {
     load("all_items");
     load("stat_group")
 
-
   } catch (error) {
     console.log(error, " Continuing...")    
   }
 }
 
-getItems();
+document.addEventListener("DOMContentLoaded", () => {
+  getItems();
+});

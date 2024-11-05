@@ -24,6 +24,10 @@ body {
     center fixed;
   background-size: contain;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -196,6 +200,9 @@ input {
   display: flex;
   padding: 8px 0 0;
   background-color: black;
+}
+.filters.off{
+  display: none;
 }
 .misc-filters,
 .stat-filters {
