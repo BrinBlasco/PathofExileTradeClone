@@ -188,7 +188,7 @@
                     Attacks per Second
                   </div>
                   <input type="text" class="min-max" placeholder="min" name="min-attacks-per-second" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="min-attacks-per-second" style="margin-right: 2px;" autocomplete="off">
+                  <input type="text" class="min-max" placeholder="max" name="max-attacks-per-second" style="margin-right: 2px;" autocomplete="off">
 
                 </div>
                 <div class="filter-stats">
@@ -1270,8 +1270,7 @@
 
     console.log("JSON Data:", jsonData);
     
-    const jsonString = JSON.stringify(jsonData);
-    // You can send the jsonString via an AJAX request or do further processing
+    const jsonString = JSON.stringify(jsonData, null, '\t');
         
         Swal.fire({
           title: 'Searched For:',
@@ -1281,10 +1280,12 @@
           color: '#e2e2e2',
           didOpen: () => {
             const confirmButton = Swal.getConfirmButton();
-            confirmButton.style.backgroundColor = '#0f304d';
+            confirmButton.style.backgroundColor = '#1e2124';
             confirmButton.style.borderRadius = '0';
-            confirmButton.style.border = '1px solid #4c4c7d';      
-            confirmButton.style.color = 'white';               
+            confirmButton.style.color = 'white';
+
+            const popup = Swal.getPopup();
+            popup.style.border = '1px solid #634928';
           }
         })
     });
