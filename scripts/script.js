@@ -1,6 +1,7 @@
 
 const defaultPlaceholders = [
-  'Any', 
+  'Any',
+  'Search Items...',
   'Enter Account Name...', 
   'Any Time', 
   'Buyout or Fixed Price', 
@@ -16,7 +17,10 @@ function toggleDropdown(el){
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  
+
+  document.querySelector("#main-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
   //expand the filter section
   document.querySelectorAll(".filter-group").forEach((group) => {
     const toggleButton = group.querySelector(".toggle-btn");
@@ -91,8 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const dropdownContainers = document.querySelectorAll(".expanded");
-  dropdownContainers.forEach(container => {
+  document.querySelectorAll(".expanded").forEach(container => {
 
     const inputs = container.querySelectorAll(".selection");
     const dropdowns = container.querySelectorAll(".dropdown");
@@ -128,4 +131,3 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
 });
-
