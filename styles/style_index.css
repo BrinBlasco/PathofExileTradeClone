@@ -1,0 +1,38 @@
+@import url(fonts.css);
+:root {
+  --input-backgrounds: #1e2124;
+  --input-labels: #0d0e10;
+  --placeholder-color-focused: #707070;
+  --font-color: #e2e2e2;
+  --fourth-color: #634928;
+  --filters-font-color: #fff8e1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roman-smallcaps;
+  font-size: 14.3px;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  background: black url("../assets/settlersofkalguur-bg.jpg") no-repeat top
+    center fixed;
+  background-size: contain;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+input {
+  all: unset;
+  box-sizing: border-box;
+}
