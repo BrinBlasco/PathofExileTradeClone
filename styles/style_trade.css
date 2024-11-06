@@ -15,8 +15,8 @@
   font-family: roman-smallcaps;
   font-size: 14.3px;
 }
-body,
-html {
+html,
+body {
   height: 100%;
 }
 body {
@@ -189,7 +189,7 @@ input {
 .dropdowns input:focus::placeholder {
   color: var(--placeholder-color-focused);
 }
-.dropdowns:focus-within .dropdown{
+.dropdowns:focus-within .dropdown {
   display: block;
 }
 .dropdowns:focus-within .fa {
@@ -201,7 +201,7 @@ input {
   padding: 8px 0 0;
   background-color: black;
 }
-.filters.off{
+.filters.off {
   display: none;
 }
 .misc-filters,
@@ -398,7 +398,6 @@ input {
   text-align: center;
   color: var(--font-color);
   line-height: 24px;
-  
 }
 
 .fa {

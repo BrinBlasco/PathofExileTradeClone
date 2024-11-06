@@ -29,4 +29,11 @@
   .tab.main span {
     display: none;
   }
+
+  .filter-stats.full > .label {
+    grid-column: span 4;
+  }
+  .filter-stats.full > .selection {
+    grid-column: span 6;
+  }
 }

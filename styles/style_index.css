@@ -14,9 +14,10 @@
   box-sizing: border-box;
   font-family: roman-smallcaps;
   font-size: 14.3px;
+  color: white;
 }
-body,
-html {
+html,
+body {
   height: 100%;
 }
 body {
@@ -33,6 +34,38 @@ a {
   text-decoration: none;
 }
 input {
-  all: unset;
   box-sizing: border-box;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+.logo > img {
+  max-width: 275px;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main {
+  position: relative;
+  margin: 30px auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 32rem;
+}
+
+.main .box {
+  width: 100%;
+  padding: 40px 70px;
+  border-image-source: url("../assets/nine-palace-bg.png");
+  border-image-slice: 20 fill;
+  border-image-width: 10px;
+  position: relative;
 }
