@@ -11,10 +11,12 @@
   <body>
     <div class="wrapper">
       <div class="logo">
-        <img src="assets/logo.png" />
+        <img src="assets/settlerslogo.png" />
       </div>
       <div class="main login">
         <div class="box">
+          <i class="horns-top"></i>
+          <i class="horns-bottom"></i>
           <div class="title">
             <h2>Sign in</h2>
             <!-- :before that thing  -->
@@ -25,18 +27,20 @@
             <input
               class="poe-input"
               type="email"
-              placeholder="Email"
               id="email"
-            />
+            /> <label for="email" class="placeholder">Email</label>
             <input
               class="poe-input"
               type="password"
-              placeholder="Password"
               id="password"
-            />
+            /> <label for="email" class="placeholder">Email</label>
             <div class="remember-forgot">
               <label for="remember-me" class="poe-checkbox">
-                <input type="checkbox" name="remember-me" />
+                <input type="checkbox" name="remember-me" id="remember-me"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                  </path>
+                </svg>
                 <span>Remember me</span>
               </label>
               <a href="#">Forgot Password</a>
@@ -44,13 +48,12 @@
             <input type="button" value="Continue" class="signin-signup" />
             <p>
               No Account?
-              <a href="#" style="font-family: optimus-princeps; color: #dcdcdc"
+              <a href="" id="create-account" style="font-family: optimus-princeps; color: #dcdcdc"
                 >Create one.</a
               >
             </p>
 
             <div class="or-continue-with">
-              <!-- before and after for the lines -->
               Or continue with
             </div>
             <div class="alternate-sign-ins">
@@ -79,11 +82,12 @@
         </div>
       </div>
 
-      <div class="main register">
+      <div class="main register hidden">
         <div class="box">
+          <i class="horns-top"></i>
+          <i class="horns-bottom"></i>
           <div class="title">
             <h2>Sign up</h2>
-            <!-- :before that thing  -->
           </div>
           <p>Accounts are shared between Path of Exile 1 and Path of Exile 2</p>
 
@@ -92,44 +96,44 @@
               class="poe-input"
               class="poe-input"
               type="account-name"
-              placeholder="Account Name"
               id="account-name"
             />
             <input
               class="poe-input"
               type="email"
-              placeholder="Email"
+              
               id="email"
             />
             <input
               class="poe-input"
               type="password"
-              placeholder="Password"
               id="password"
             />
             <input
               class="poe-input"
               type="password"
-              placeholder="Password"
               id="password"
             />
             
             <div class="remember-forgot">
-              <label for="remember-me" class="poe-checkbox">
-                <input type="checkbox" name="cookies" />
+              <label for="cookes" class="poe-checkbox">
+                <input type="checkbox" name="cookies" id="cookies"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                </svg>
                 <span style="margin-top: 0.8rem;">
-                  <a
-                    href="#"
-                    style="font-family: optimus-princeps; color: #ead9af"
-                    >I accept the<span style="font-family: optimus-princeps; color: #dcdcdc; margin-left: 0;"> Terms of Use, Privacy Notice, and Notice<span></a
-                  >
+                  <a href="#" style="font-family: optimus-princeps; color: #ead9af">
+                    I accept the
+                    <span style="font-family: optimus-princeps; color: #dcdcdc; margin-left: 0;"> Terms of Use, Privacy Notice, and Notice
+                    <span>
+                  </a>
                 </span>
               </label>
             </div>
             <input type="button" value="Create Account" class="signin-signup" />
             <p>
               Have an Account?
-              <a href="#">Sign In instead.</a>
+              <a href="" id="sign-in">Sign In instead.</a>
             </p>
 
             <div class="or-continue-with">
@@ -162,5 +166,7 @@
         </div>
       </div>
     </div>
+
+    <script src="scripts/index/main.js"></script>
   </body>
 </html>

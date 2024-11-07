@@ -62,17 +62,77 @@ img {
   flex-direction: column;
   max-width: 32rem;
 }
+.main.register.hidden,
+.main.login.hidden {
+  display: none !important;
+}
 
 .main .box {
   width: 100%;
   padding: 40px 70px;
-  border-image-source: url("../assets/nine-palace-bg.png");
+  border-image-source: url("../assets/nine-palace/nine-palace-bg.png");
   border-image-slice: 20 fill;
   border-image-width: 10px;
   position: relative;
 }
+.main .box::before {
+  content: "";
+  width: 160px;
+  height: 46px;
+  background: url("../assets/nine-palace/nine-palace-top.png") no-repeat center
+    top;
+  background-size: contain;
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  margin-left: -80px;
+}
+.main .box::after {
+  content: "";
+  width: 285px;
+  height: 104px;
+  background: url("../assets/nine-palace/nine-palace-bottom.png") no-repeat
+    center top;
+  background-size: contain;
+  position: absolute;
+  bottom: -98px;
+  left: 50%;
+  margin-left: -142px;
+}
+.main .box .horns-top::before,
+.main .box .horns-top::after {
+  content: "";
+  width: 68px;
+  height: 121px;
+  background: url("../assets/nine-palace/nine-palace-horn-top.png") no-repeat
+    center top;
+  background-size: contain;
+  position: absolute;
+  top: -23px;
+}
+.horns-top::before,
+.horns-bottom::before {
+  left: -20px;
+}
+.horns-top::after,
+.horns-bottom::after {
+  right: -20px;
+  transform: rotateY(180deg);
+}
 
-.box .title h2 {
+.main .box .horns-bottom::before,
+.main .box .horns-bottom::after {
+  content: "";
+  width: 50px;
+  height: 123px;
+  background: url("../assets/nine-palace/nine-palace-horn-bottom.png") no-repeat
+    center top;
+  background-size: contain;
+  position: absolute;
+  bottom: -74px;
+}
+
+.main .box .title h2 {
   color: rgb(234, 217, 175);
   font-size: 32px;
   font-family: cinzel;
@@ -90,7 +150,7 @@ img {
   margin-bottom: 1.6rem;
   position: relative;
 }
-.box p {
+.main .box p {
   font-size: 1rem;
   color: #9d9d9d;
   font-weight: 200;
@@ -121,6 +181,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  user-select: none;
 }
 .remember-forgot span,
 .remember-forgot a {
@@ -148,7 +209,17 @@ img {
   border: 1px solid #4a3d22;
   border-radius: 0.2em;
 }
-
+.remember-forgot svg {
+  display: none !important;
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  padding: 0.2em;
+  fill: #ead9af;
+}
+.remember-forgot input:checked ~ svg {
+  display: block !important;
+}
 .signin-signup {
   margin-top: 0.4rem;
   background: url("../assets/button-primary.png") no-repeat;
@@ -163,6 +234,9 @@ img {
   cursor: pointer;
   padding: 1.3rem 1.6rem 1.55rem;
   border: none;
+}
+.signin-signup:hover {
+  filter: brightness(1.2);
 }
 
 .or-continue-with {
@@ -183,10 +257,12 @@ img {
 }
 .or-continue-with::before {
   -webkit-mask-image: linear-gradient(-90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(-90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
   margin-right: 2px;
 }
 .or-continue-with::after {
   -webkit-mask-image: linear-gradient(90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
   margin-left: 2px;
 }
 
@@ -194,11 +270,25 @@ img {
   border-radius: 0.2rem;
 }
 .platform a {
+  border-radius: 0.2rem;
   padding: 16px;
   height: 64px;
   width: 64px;
   display: grid;
   place-items: center;
+}
+
+.platform:nth-child(1) a:hover {
+  background-color: color-mix(in srgb, white 15%, black);
+}
+.platform:nth-child(2) a:hover {
+  background-color: color-mix(in srgb, black 15%, white);
+}
+.platform:nth-child(3) a:hover {
+  background-color: color-mix(in srgb, white 15%, #267a1c);
+}
+.platform:nth-child(4) a:hover {
+  background-color: color-mix(in srgb, white 15%, #05398e);
 }
 .platform a img {
   height: 30px;
