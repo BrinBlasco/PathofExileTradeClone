@@ -1,4 +1,5 @@
 @import url(fonts.css);
+
 :root {
   --input-backgrounds: #1e2124;
   --input-labels: #0d0e10;
@@ -35,6 +36,7 @@ a {
 }
 input {
   box-sizing: border-box;
+  outline: none;
 }
 img {
   border: 0;
@@ -68,4 +70,137 @@ img {
   border-image-slice: 20 fill;
   border-image-width: 10px;
   position: relative;
+}
+
+.box .title h2 {
+  color: rgb(234, 217, 175);
+  font-size: 32px;
+  font-family: cinzel;
+  background: linear-gradient(
+      0deg,
+      color-mix(in srgb, #ffef9a 65%, white),
+      color-mix(in srgb, #ffef9a 65%, black)
+    )
+    repeat bottom 0 left 0;
+  line-height: 1.2;
+  background-size: 100% 38.4px;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+.box p {
+  font-size: 1rem;
+  color: #9d9d9d;
+  font-weight: 200;
+  margin: 2rem 0 0.4rem;
+  text-align: center;
+  font-family: optimus-princeps;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.alternate-sign-ins {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.poe-input {
+  background-color: black;
+  border: 1px solid #4a3d22;
+  padding: 1.2em 0.6em 0.4em;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.remember-forgot span,
+.remember-forgot a {
+  font-family: optimus-princeps;
+  color: #ead9af;
+}
+.poe-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.remember-forgot span {
+  margin-left: 0.8rem;
+}
+.remember-forgot input {
+  cursor: pointer;
+  appearance: none;
+  height: 1.2em;
+  width: 1.2em;
+  flex: 0 0 1.2em;
+  background-color: black;
+  margin: 0;
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 40%), inset 0 1px 1px rgb(0 0 0 / 20%),
+    inset 0 2px 2px rgb(0 0 0 / 20%), 0px 0px 3px rgba(255, 239, 154, 0.3);
+  border: 1px solid #4a3d22;
+  border-radius: 0.2em;
+}
+
+.signin-signup {
+  margin-top: 0.4rem;
+  background: url("../assets/button-primary.png") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-family: cinzel;
+  font-weight: 700;
+  color: #181818;
+  cursor: pointer;
+  padding: 1.3rem 1.6rem 1.55rem;
+  border: none;
+}
+
+.or-continue-with {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.6rem 0 0.8rem;
+  color: #ccbc91;
+  font-family: optimus-princeps;
+}
+.or-continue-with:before,
+.or-continue-with:after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-top: -1px;
+  background-color: #ccbc91;
+}
+.or-continue-with::before {
+  -webkit-mask-image: linear-gradient(-90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  margin-right: 2px;
+}
+.or-continue-with::after {
+  -webkit-mask-image: linear-gradient(90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  margin-left: 2px;
+}
+
+.platform {
+  border-radius: 0.2rem;
+}
+.platform a {
+  padding: 16px;
+  height: 64px;
+  width: 64px;
+  display: grid;
+  place-items: center;
+}
+.platform a img {
+  height: 30px;
+  width: 30px;
 }
