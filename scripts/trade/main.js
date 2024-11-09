@@ -1,6 +1,5 @@
 const defaultPlaceholders = [
   "Any",
-  "Search Items...",
   "Enter Account Name...",
   "Any Time",
   "Buyout or Fixed Price",
@@ -72,26 +71,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelectorAll(".expanded").forEach((container) => {
-    const inputs = container.querySelectorAll(".selection");
+    const inputWrappers = container.querySelectorAll(".selection");
     const dropdowns = container.querySelectorAll(".dropdown");
 
-    inputs.forEach((input, index) => {
+    inputWrappers.forEach((inputWrapper, index) => {
       const dropdown = dropdowns[index];
-
       if (!dropdown) return;
-      dropdown.classList.remove("show");
 
-      input.addEventListener("click", (event_input) => {
-        event_input.stopPropagation();
+      inputWrapper.addEventListener("click", (e_inputWrapper) => {
+        e_inputWrapper.stopPropagation();
+
+        const inputField = inputWrapper.querySelector("input");
+        const options = dropdown.querySelectorAll("span.list-item");
+
         closeDropdowns();
         dropdown.classList.toggle("show");
-
-        const options = dropdown.querySelectorAll("span.list-item");
+        inputField.focus();
 
         document.addEventListener(
           "click",
           () => {
             dropdown.classList.remove("show");
+            inputField.blur();
           },
           { once: true }
         );
@@ -99,8 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
         options.forEach((option) => {
           option.addEventListener("click", (event_option) => {
             event_option.stopPropagation();
-            input.querySelector("input").placeholder = option.innerText;
+            inputField.placeholder = option.innerText;
             dropdown.classList.remove("show");
+            inputField.blur();
           });
         });
       });
@@ -137,40 +139,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document
-    .querySelector(".search-left .dropdowns")
-    .addEventListener("click", (e_container) => {
-      const dropdown = document.querySelector(".search-left .dropdown");
-      const arrow = document.querySelector(".search-left .dropdowns .arrow");
-      const options = dropdown.querySelectorAll("span");
+  const leftDropdown = document.querySelector(".search-left .dropdowns");
+  leftDropdown.addEventListener("click", (e_container) => {
+    e_container.stopPropagation();
+    const dropdown = leftDropdown.querySelector(".dropdown");
+    const arrow = leftDropdown.querySelector(".arrow");
+    const input = leftDropdown.querySelector("input");
+    const options = dropdown.querySelectorAll("span");
 
-      document
-        .querySelector(".search-left .dropdowns")
-        .addEventListener("click", (e_inner) => {
-          e_inner.stopPropagation();
-          dropdown.classList.toggle("show");
-          arrow.classList.toggle("rotated");
-          document.addEventListener(
-            "click",
-            () => {
-              dropdown.classList.remove("show");
-              dropdown.classList.remove("rotated");
-            },
-            { once: true }
-          );
+    closeDropdowns();
+    dropdown.classList.toggle("show");
+    arrow.classList.toggle("rotated");
+    input.focus();
 
-          options.forEach((option) => {
-            option.addEventListener("click", (e_option) => {
-              e_option.stopPropagation();
+    document.addEventListener(
+      "click",
+      () => {
+        dropdown.classList.remove("show");
+        dropdown.classList.remove("rotated");
+        input.blur();
+      },
+      { once: true }
+    );
 
-              dropdown.classList.remove("show");
-              arrow.classList.remove("rotated");
+    options.forEach((option) => {
+      option.addEventListener("click", (e_option) => {
+        e_option.stopPropagation();
 
-              e_container.target.placeholder = option.innerText;
-            });
-          });
-        });
+        dropdown.classList.remove("show");
+        arrow.classList.remove("rotated");
+        input.blur();
+
+        input.value = option.innerText;
+      });
     });
+  });
 });
 
 function handleSubmitAction(action) {
@@ -196,8 +199,14 @@ function handleSubmitAction(action) {
       filters.classList.toggle("off");
       break;
     case "search":
+      const platform = document.querySelector("#platform").innerText;
+      const league = document.querySelector("#league").innerText;
+      const status = document.querySelector("#status").innerText;
+
       const formData = new FormData(form);
       const jsonData = {};
+
+      let baseItem = "";
 
       try {
         formData.forEach((value, key) => {
@@ -221,11 +230,12 @@ function handleSubmitAction(action) {
 
             if (inputElement) {
               const isMinMax = inputElement.classList.contains("min-max");
+              const isSock = inputElement.classList.contains("sockets");
               const isPlaceholderExcluded = defaultPlaceholders.includes(
                 inputElement.placeholder
               );
 
-              if (isMinMax) {
+              if (isMinMax || isSock) {
                 if (value !== "" && !isPlaceholderExcluded) {
                   jsonData[key] = value;
                 }
@@ -239,32 +249,52 @@ function handleSubmitAction(action) {
             }
           }
         });
+        baseItem =
+          jsonData["base-item"] === "" ||
+          jsonData["base-item"] == "Search Items..." ||
+          !jsonData["base-item"]
+            ? ""
+            : `<h3 style="font-size: 18px;">${jsonData["base-item"]}</h3><br />`;
+        delete jsonData["base-item"];
+        let jsonString = JSON.stringify(jsonData, null, 4).substring(
+          1,
+          JSON.stringify(jsonData, null, 4).length - 1
+        );
+        jsonString = jsonString == "" ? "None" : jsonString;
+
+        Swal.fire({
+          title: "Searched:",
+          html: `
+            ${baseItem}
+            <p>
+              Platform: ${platform} <br />
+              League: ${league} <br />
+              Status: ${status} <br />
+            </p>
+            <br />
+            <h3>Filters:</h3>
+            <pre style="text-align: let; font-familiy: monospace; white-space: pre-wrap;">${jsonString}</pre> 
+          `,
+          confirmButtonText: "Cool",
+          background: "#000",
+          color: "#e2e2e2",
+          width: "auto",
+          didOpen: () => {
+            const confirmButton = Swal.getConfirmButton();
+            confirmButton.style.backgroundColor = "#1e2124";
+            confirmButton.style.borderRadius = "0";
+            confirmButton.style.color = "white";
+
+            const popup = Swal.getPopup();
+            popup.style.border = "1px solid #634928";
+          },
+        });
       } catch (error) {
         console.log("Error processing the form data:", error);
       }
-
-      const jsonString = JSON.stringify(jsonData, null, 4);
-
-      Swal.fire({
-        title: "Searched For:",
-        html: `<pre style="text-align: left; font-familiy: monospace; white-space: pre-wrap;">${jsonString}</pre>`,
-        confirmButtonText: "Cool",
-        background: "#000",
-        color: "#e2e2e2",
-        width: "auto",
-        didOpen: () => {
-          const confirmButton = Swal.getConfirmButton();
-          confirmButton.style.backgroundColor = "#1e2124";
-          confirmButton.style.borderRadius = "0";
-          confirmButton.style.color = "white";
-
-          const popup = Swal.getPopup();
-          popup.style.border = "1px solid #634928";
-        },
-      });
       break;
     default:
-      break;
+      console.log(action);
   }
 }
 

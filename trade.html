@@ -25,7 +25,7 @@
           <img id="image" src="assets/tradelogo.png" alt="#" />
         </a>
       </div>
-      <form action="" id="main-form">
+      <form action="#" id="main-form">
         <div id="trade">
           <div class="navigation">
             <ul class="tab main">
@@ -56,7 +56,7 @@
                 </a>
               </li>
               <li class="menu-settings">
-                <a href="#">
+                <a href="#" id="settings">
                   <div class="adj">
                     <i class="fa fa-cog"></i>
                     <span>Settings</span>
@@ -95,9 +95,24 @@
                 </div>
                 <div class="dropdown" style="top: 0; width: 100%">
                   <ul>
-                    <li><span class="list-item">PC</span></li>
-                    <li><span class="list-item">Xbox</span></li>
-                    <li><span class="list-item">Sony</span></li>
+                    <li>
+                      <span class="list-item">
+                        <!-- icons -->
+                        PC</span
+                      >
+                    </li>
+                    <li>
+                      <span class="list-item">
+                        <!-- icons -->
+                        Xbox</span
+                      >
+                    </li>
+                    <li>
+                      <span class="list-item">
+                        <!-- icons -->
+                        Sony</span
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -435,26 +450,26 @@
                       type="text"
                       class="sockets red"
                       placeholder="R"
-                      name="num-red"
+                      name="num-red-sockets"
                       autocomplete="off"
                     />
                     <input
                       type="text"
                       class="sockets green"
                       placeholder="G"
-                      name="num-green"
+                      name="num-green-sockets"
                       autocomplete="off"
                     />
                     <input
                       type="text"
                       class="sockets blue"
                       placeholder="B"
-                      name="num-blue"
+                      name="num-blue-sockets"
                       autocomplete="off"
                     />
                     <input
                       type="text"
-                      class="sockets white"
+                      class="sockets white-sockets"
                       placeholder="W"
                       name="num-white"
                       autocomplete="off"
@@ -483,28 +498,28 @@
                         type="text"
                         class="sockets red"
                         placeholder="R"
-                        name="num-red"
+                        name="num-red-links"
                         autocomplete="off"
                       />
                       <input
                         type="text"
                         class="sockets green"
                         placeholder="G"
-                        name="num-green"
+                        name="num-green-links"
                         autocomplete="off"
                       />
                       <input
                         type="text"
                         class="sockets blue"
                         placeholder="B"
-                        name="num-blue"
+                        name="num-blue-links"
                         autocomplete="off"
                       />
                       <input
                         type="text"
                         class="sockets white"
                         placeholder="W"
-                        name="num-white"
+                        name="num-white-links"
                         autocomplete="off"
                       />
                     </div>
@@ -513,14 +528,14 @@
                       type="text"
                       class="min-max"
                       placeholder="min"
-                      name="min-sockets"
+                      name="min-links"
                       autocomplete="off"
                     />
                     <input
                       type="text"
                       class="min-max"
                       placeholder="max"
-                      name="max-sockets"
+                      name="max-links"
                       style="margin-right: 2px"
                       autocomplete="off"
                     />
@@ -1896,6 +1911,7 @@
                         type="text"
                         class="filter-tags add-stat-filter"
                         placeholder="+ Add Stat Filter"
+                        name="stat-filters"
                         autocomplete="off"
                       />
                     </div>
@@ -1921,6 +1937,7 @@
                         type="text"
                         class="filter-tags"
                         placeholder="+ Add Stat Group"
+                        name="stat-group"
                         autocomplete="off"
                       />
                     </div>
