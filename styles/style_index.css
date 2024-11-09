@@ -150,6 +150,19 @@ img {
   margin-bottom: 1.6rem;
   position: relative;
 }
+.main .box .title h2::before {
+  content: "";
+  width: 308px;
+  height: 12px;
+  background: url("../assets/nine-palace/login-title-zs.png") no-repeat center
+    top;
+  background-size: contain;
+  background-position: 50% 50%;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%);
+}
 .main .box p {
   font-size: 1rem;
   color: #9d9d9d;
@@ -182,6 +195,7 @@ img {
   border: 1px solid #4a3d22;
   padding: 1.2em 0.6em 0.4em;
   flex-grow: 1;
+  align-self: stretch;
 }
 .poe-input input:focus-within ~ label.placeholder {
   transform: translateY(calc(-50% - 0.4em)) scale(0.8);
@@ -189,12 +203,14 @@ img {
 .poe-input input:focus {
   box-shadow: 0 0 2px 1px #fff1d1, 0 0 0 2px #4a2d22, inset 0 0 1px #28334133,
     inset 0 1px 1px #2833411a, inset 0 2px 2px #2833411a;
-} /* KONC ZA DNS */
-.poe-input input:not(::content) ~ label.placeholder {
+}
+.poe-input input::placeholder {
+  color: black;
+}
+.poe-input input:not(:placeholder-shown) ~ label.placeholder {
   transform: translateY(calc(-50% - 0.4em)) scale(0.8) !important;
 }
-/* .poe-input input:not(:empty) ~ label.placeholder {
-} */
+
 .poe-input label.placeholder {
   position: absolute;
   top: 1.5em;
@@ -310,6 +326,10 @@ img {
   display: grid;
   place-items: center;
 }
+.platform a img {
+  height: 30px;
+  width: 30px;
+}
 
 .platform:nth-child(1) a:hover {
   background-color: color-mix(in srgb, white 15%, black);
@@ -322,8 +342,4 @@ img {
 }
 .platform:nth-child(4) a:hover {
   background-color: color-mix(in srgb, white 15%, #05398e);
-}
-.platform a img {
-  height: 30px;
-  width: 30px;
 }

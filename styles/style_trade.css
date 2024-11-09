@@ -137,8 +137,6 @@ input {
   text-align: center;
 }
 
-/* BELOW TABS */
-
 .search-bar {
   display: flex;
   font-size: 0.9rem;
@@ -189,10 +187,7 @@ input {
 .dropdowns input:focus::placeholder {
   color: var(--placeholder-color-focused);
 }
-.dropdowns:focus-within .dropdown {
-  display: block;
-}
-.dropdowns:focus-within .fa {
+.dropdowns .arrow.rotated .fa {
   transform: rotate(180deg);
 }
 
@@ -550,4 +545,7 @@ input {
 }
 .selection.not-empty {
   border: 1px solid #a0a0d0;
+}
+.selection.not-empty ~ .selection input::placeholder {
+  color: var(--font-color);
 }

@@ -19,7 +19,6 @@
           <i class="horns-bottom"></i>
           <div class="title">
             <h2>Sign in</h2>
-            <!-- :before that thing  -->
           </div>
           <p>Sign in to your Path of Exile Account</p>
 
@@ -30,8 +29,10 @@
                 type="email"
                 id="email"
                 autocomplete="off"
+                placeholder="Email"
                 required
-              /> <label for="email" class="placeholder">Email</label>
+              />
+              <label for="email" class="placeholder">Email</label>
             </div>
             <div class="poe-input">
               <input
@@ -39,32 +40,43 @@
                 type="password"
                 id="password"
                 autocomplete="off"
+                placeholder="Password"
+                pattern=".{8,}"
+                title="Password must be atleast 8 characters long. "
                 required
-              /> <label for="password" class="placeholder">Password</label>
+              />
+              <label for="password" class="placeholder">Password</label>
             </div>
 
             <div class="remember-forgot">
               <label for="remember-me" class="poe-checkbox">
-                <input type="checkbox" name="remember-me" id="remember-me"/>
+                <input type="checkbox" name="remember-me" id="remember-me" />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                  </path>
+                  <path
+                    d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  ></path>
                 </svg>
                 <span>Remember me</span>
               </label>
               <a href="#">Forgot Password</a>
             </div>
-            <input type="button" value="Continue" class="signin-signup" />
+            <input
+              type="submit"
+              value="Continue"
+              class="signin-signup"
+              id="login-continue"
+            />
             <p>
               No Account?
-              <a href="" id="create-account" style="font-family: optimus-princeps; color: #dcdcdc"
+              <a
+                href=""
+                id="create-account"
+                style="font-family: optimus-princeps; color: #dcdcdc"
                 >Create one.</a
               >
             </p>
 
-            <div class="or-continue-with">
-              Or continue with
-            </div>
+            <div class="or-continue-with">Or continue with</div>
             <div class="alternate-sign-ins">
               <div class="platform" style="background-color: #000">
                 <a href="#"
@@ -107,8 +119,11 @@
                 type="text"
                 id="account-name"
                 autocomplete="off"
+                placeholder="Account name"
                 required
-              /><label for="account-name" class="placeholder">Account Name</label>
+              /><label for="account-name" class="placeholder"
+                >Account Name</label
+              >
             </div>
             <div class="poe-input">
               <input
@@ -116,6 +131,7 @@
                 type="email"
                 id="email"
                 autocomplete="off"
+                placeholder="Email"
                 required
               /><label for="email" class="placeholder">Email</label>
             </div>
@@ -125,44 +141,65 @@
                 type="password"
                 id="password"
                 autocomplete="off"
+                placeholder="Password"
+                pattern=".{8,}"
+                title="Password must be atleat 8 characters long."
                 required
               /><label for="password" class="placeholder">Password</label>
             </div>
-            <div class="poe-input">  
+            <div class="poe-input">
               <input
                 class="poe-input_input"
                 type="password"
                 id="repeat-password"
                 autocomplete="off"
+                placeholder="Confirm Password"
+                pattern=".{8,}"
                 required
-              /><label for="repeat-password" class="placeholder">Confirm Password</label>
+              /><label for="repeat-password" class="placeholder"
+                >Confirm Password</label
+              >
             </div>
-            
+
             <div class="remember-forgot">
               <label for="cookes" class="poe-checkbox">
-                <input type="checkbox" name="cookies" id="cookies"/>
+                <input type="checkbox" name="cookies" id="cookies" />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                  <path
+                    d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  ></path>
                 </svg>
-                <span style="margin-top: 0.8rem;">
-                  <a href="#" style="font-family: optimus-princeps; color: #ead9af">
+                <span style="margin-top: 0.8rem">
+                  <a
+                    href="#"
+                    style="font-family: optimus-princeps; color: #ead9af"
+                  >
                     I accept the
-                    <span style="font-family: optimus-princeps; color: #dcdcdc; margin-left: 0;"> Terms of Use, Privacy Notice, and Notice
-                    <span>
+                    <a
+                      style="
+                        font-family: optimus-princeps;
+                        color: #dcdcdc;
+                        margin-left: 0;
+                      "
+                    >
+                      Terms of Use, Privacy Notice, and Notice
+                    </a>
                   </a>
                 </span>
               </label>
             </div>
-            <input type="button" value="Create Account" class="signin-signup" />
+            <input
+              type="submit"
+              value="Create Account"
+              class="signin-signup"
+              id="register-continue"
+            />
             <p>
               Have an Account?
               <a href="" id="sign-in">Sign In instead.</a>
             </p>
 
-            <div class="or-continue-with">
-              <!-- before and after for the lines -->
-              Or continue with
-            </div>
+            <div class="or-continue-with">Or continue with</div>
             <div class="alternate-sign-ins">
               <div class="platform" style="background-color: #000">
                 <a href="#"
