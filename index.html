@@ -6,7 +6,7 @@
     <title>Path of Exile</title>
 
     <link rel="stylesheet" href="styles/style_index.css" />
-    <link rel="shortcut icon" href="assets/Icon8.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/icon.svg" type="image/x-icon" />
   </head>
   <body>
     <div class="wrapper">
@@ -24,16 +24,25 @@
           <p>Sign in to your Path of Exile Account</p>
 
           <form action="#" class="login-form">
-            <input
-              class="poe-input"
-              type="email"
-              id="email"
-            /> <label for="email" class="placeholder">Email</label>
-            <input
-              class="poe-input"
-              type="password"
-              id="password"
-            /> <label for="email" class="placeholder">Email</label>
+            <div class="poe-input">
+              <input
+                class="poe-input__input"
+                type="email"
+                id="email"
+                autocomplete="off"
+                required
+              /> <label for="email" class="placeholder">Email</label>
+            </div>
+            <div class="poe-input">
+              <input
+                class="poe-input__input"
+                type="password"
+                id="password"
+                autocomplete="off"
+                required
+              /> <label for="password" class="placeholder">Password</label>
+            </div>
+
             <div class="remember-forgot">
               <label for="remember-me" class="poe-checkbox">
                 <input type="checkbox" name="remember-me" id="remember-me"/>
@@ -92,28 +101,42 @@
           <p>Accounts are shared between Path of Exile 1 and Path of Exile 2</p>
 
           <form action="#" class="register-form">
-            <input
-              class="poe-input"
-              class="poe-input"
-              type="account-name"
-              id="account-name"
-            />
-            <input
-              class="poe-input"
-              type="email"
-              
-              id="email"
-            />
-            <input
-              class="poe-input"
-              type="password"
-              id="password"
-            />
-            <input
-              class="poe-input"
-              type="password"
-              id="password"
-            />
+            <div class="poe-input">
+              <input
+                class="poe-input_input"
+                type="text"
+                id="account-name"
+                autocomplete="off"
+                required
+              /><label for="account-name" class="placeholder">Account Name</label>
+            </div>
+            <div class="poe-input">
+              <input
+                class="poe-input_input"
+                type="email"
+                id="email"
+                autocomplete="off"
+                required
+              /><label for="email" class="placeholder">Email</label>
+            </div>
+            <div class="poe-input">
+              <input
+                class="poe-input_input"
+                type="password"
+                id="password"
+                autocomplete="off"
+                required
+              /><label for="password" class="placeholder">Password</label>
+            </div>
+            <div class="poe-input">  
+              <input
+                class="poe-input_input"
+                type="password"
+                id="repeat-password"
+                autocomplete="off"
+                required
+              /><label for="repeat-password" class="placeholder">Confirm Password</label>
+            </div>
             
             <div class="remember-forgot">
               <label for="cookes" class="poe-checkbox">
