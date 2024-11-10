@@ -1,1223 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Path of Exile</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trade - Path of Exile</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="styles/style.css" />
-  <link rel="stylesheet" href="styles/grid.css">
-  <link rel="stylesheet" href="styles/media.css">
-  <link rel="stylesheet" href="styles/fonts.css" />
-
-</head>
-
-<body>
-  <div id="wrapper">
-    <div id="logo">
-      <a href="#">
-        <img id="image" src="assets/logo.png" alt="#"/>
-      </a>
-    </div>
-    <form action="#" method="post" id="main-form">
-      <div id="trade">
-        <div class="navigation">
-          <ul class="tab main">
-            <li class="menu-search"><a href="#">
-                <div class="adj">
-                  <i class="fa fa-search"></i>
-                  <span>Search Listed Items</span>
-                </div>
-              </a>
-            </li>
-            <li class="menu-bulk"><a href="#">
-                <div class="adj">
-                  <i class="fa fa-exchange"></i>
-                  <span>Bulk Item Exchange</span>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <ul class="tab account">
-            <li class="menu-about">
-              <a href="#">
-                <div class="adj">
-                  <i class="fa fa-question"></i>
-                  <span>About</span>
-                </div>
-              </a>
-            </li>
-            <li class="menu-settings">
-              <a href="#">
-                <div class="adj">
-                  <i class="fa fa-cog"></i>
-                  <span>Settings</span>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="clr"></div>
-        <div class="search-bar">
-          <div class="search-left">
-            <div class="dropdowns" style="position: relative;">
-              <input type="text" placeholder="Search Items..." name="base-item" autocomplete="off">
-              <div class="arrow">
-                <i class="fa fa-caret-down"></i>
-              </div>
-              <div class="dropdown" id="all_items" style="top: 0; width: 100%;">
-                <ul>
-                </ul>
-              </div>
-            </div>
+    <link rel="stylesheet" href="styles/style_index.css" />
+    <link rel="shortcut icon" href="assets/icon.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="logo">
+        <img src="assets/settlerslogo.png" />
+      </div>
+      <div class="main login">
+        <div class="box">
+          <i class="horns-top"></i>
+          <i class="horns-bottom"></i>
+          <div class="title">
+            <h2>Sign in</h2>
           </div>
-          <div class="search-right">
-            <div class="dropdowns" id="platform" style="width: 20%;" onclick="toggleDropdown(this);">
-              <span>PC</span>
-              <div class="arrow">
-                <i class="fa fa-caret-down"></i>
-              </div>
-              <div class="dropdown" style="top: 0; width: 100%;">
-                <ul>
-                  <li><span class="list-item">PC</span></li>
-                  <li><span class="list-item">Xbox</span></li>
-                  <li><span class="list-item">Sony</span></li>
-                </ul>
-              </div>
-            </div>
-            <div class="dropdowns" id="league" style="width: 40%;" onclick="toggleDropdown(this);">
-              <span>Settlers</span>
-              <div class="arrow">
-                <i class="fa fa-caret-down"></i>
-              </div>
-              <div class="dropdown" style="top: 0; width: 100%;">
-                <ul>
-                  <li><span class="list-item">Settlers</span></li>
-                  <li><span class="list-item">Hardcore Settlers</span></li>
-                  <li><span class="list-item">Standard</span></li>
-                  <li><span class="list-item">Hardcore Standard</span></li>
-                </ul>
-              </div>
-            </div>
-            <div class="dropdowns" id="status" style="width: 40%; scrollbar-width: none;" onclick="toggleDropdown(this);">
-              <span>Online Only</span>
-              <div class="arrow">
-                <i class="fa fa-caret-down"></i>
-              </div>
-              <div class="dropdown" style="top: 0; width: 100%;">
-                <ul>
-                  <li><span class="list-item">Online Only</span></li>
-                  <li><span class="list-item">Online in Leauge</span></li>
-                  <li><span class="list-item">Any</span></li>
-                </ul>
-              </div>
-            </div>
-            </select>
-          </div>
-        </div>
-        
-        <div class="filters">
-          <div class="misc-filters">
+          <p>Sign in to your Path of Exile Account</p>
 
-            <div class="filter-group" id="type_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk on"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Type Filters</span>
-              </div>
-              <div class="expanded">
-                <div class="filter-stats full">
-                  <div class="label">
-                    Item Category
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="item-category" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="item_category">
-                    <ul>
-                    </ul>
-                  </div>
-                </div>
-                <div class="filter-stats full">
-                  <div class="label">
-                    Item Rarity
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="item-rarity" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="item_rarity">
-                    <ul>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <form action="#" class="login-form">
+            <div class="poe-input">
+              <input
+                class="poe-input__input"
+                type="email"
+                id="email"
+                autocomplete="off"
+                placeholder="Email"
+                required
+              />
+              <label for="email" class="placeholder">Email</label>
+            </div>
+            <div class="poe-input">
+              <input
+                class="poe-input__input"
+                type="password"
+                id="password"
+                autocomplete="off"
+                placeholder="Password"
+                pattern=".{8,}"
+                title="Password must be atleast 8 characters long. "
+                required
+              />
+              <label for="password" class="placeholder">Password</label>
             </div>
 
-            <div class="filter-group" id="weapon_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Weapon Filters</span>
+            <div class="remember-forgot">
+              <label for="remember-me" class="poe-checkbox">
+                <input type="checkbox" name="remember-me" id="remember-me" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  ></path>
+                </svg>
+                <span>Remember me</span>
+              </label>
+              <a href="#">Forgot Password</a>
+            </div>
+            <input
+              type="submit"
+              value="Continue"
+              class="signin-signup"
+              id="login-continue"
+            />
+            <p>
+              No Account?
+              <a
+                href=""
+                id="create-account"
+                style="font-family: optimus-princeps; color: #dcdcdc"
+                >Create one.</a
+              >
+            </p>
+
+            <div class="or-continue-with">Or continue with</div>
+            <div class="alternate-sign-ins">
+              <div class="platform" style="background-color: #000">
+                <a href="#"
+                  ><img src="assets/platforms/steam.svg" alt="Steam"
+                /></a>
               </div>
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="label">
-                    Damage
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-damage" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-damage" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Attacks per Second
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-attacks-per-second" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="min-attacks-per-second" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Critical Chance
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-critical-strike-chance" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-critical-strike-chance" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Damage per Second
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-damage-per-second" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-damage-per-second" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Physical DPS
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-physical-dps" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-physical-dps" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Elemental DPS
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-elmental-dps" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-elmental-dps" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-
+              <div class="platform" style="background-color: #fff">
+                <a href="#">
+                  <img src="assets/platforms/epic-dark.svg" alt="Epic" />
+                </a>
+              </div>
+              <div class="platform" style="background-color: #267a1c">
+                <a href="#">
+                  <img src="assets/platforms/xbox.svg" alt="Xbox" />
+                </a>
+              </div>
+              <div class="platform" style="background-color: #05398e">
+                <a href="#">
+                  <img src="assets/platforms/sony.svg" alt="Sony" />
+                </a>
               </div>
             </div>
-
-            <div class="filter-group" id="armour_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Armour Filters</span>
-              </div>
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="label">
-                    Armour
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-armour" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-armour" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Evasion
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-evasion" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-evasion" style="margin-right: 2px;" autocomplete="off">
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Energy Sheld
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-energy-shield" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-energy-shield" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Ward
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-ward" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-ward" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Block
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-block" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-block" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Base Percentile
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-base-percentile" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-base-percentile" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-
-              </div>
-            </div>
-
-            <div class="filter-group" id="socket_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Socket Filters</span>
-              </div>
-              <div class="expanded off ">
-                <div class="filter-stats rgbw">
-                  <div class="label">
-                    Sockets
-                  </div>
-
-                  <input type="text" class="sockets red" placeholder="R" name="num-red" autocomplete="off">
-                  <input type="text" class="sockets green" placeholder="G" name="num-green" autocomplete="off">
-                  <input type="text" class="sockets blue" placeholder="B" name="num-blue" autocomplete="off">
-                  <input type="text" class="sockets white" placeholder="W" name="num-white" autocomplete="off">
-
-                  <input type="text" class="min-max" placeholder="min" name="min-sockets" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-sockets" style="margin-right: 2px;" autocomplete="off">
-                </div>
-                <div class="filter-stats rgbw">
-                  <div class="label">
-                    Links
-                  </div>
-                  <div class="socketWrap">
-
-                    <input type="text" class="sockets red" placeholder="R" name="num-red" autocomplete="off">
-                    <input type="text" class="sockets green" placeholder="G" name="num-green" autocomplete="off">
-                    <input type="text" class="sockets blue" placeholder="B" name="num-blue" autocomplete="off">
-                    <input type="text" class="sockets white" placeholder="W" name="num-white" autocomplete="off">
-                  </div>
-
-                  <input type="text" class="min-max" placeholder="min" name="min-sockets" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-sockets" style="margin-right: 2px;" autocomplete="off">
-                </div>
-              </div>
-            </div>
-
-            <div class="filter-group" id="requirements">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Requirements</span>
-              </div>
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="label">
-                    Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-level" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Strength
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-strength" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-strength" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Dexterity
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-dexterity" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-dexterity" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Intelligence
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-intelligence" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-intelligence" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Character Class
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="character-class" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="character_class">
-                    <ul>
-                    </ul>
-                  </div>
-
-                  <div class="label hidden">
-                  </div>
-                  <div class="selection hidden">
-                    <input type="text" class="filter-tags" placeholder="Any" autocomplete="off">
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="filter-group" id="map_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Map Filters</span>
-              </div>
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="label">
-                    Map Tier
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-map-tier" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-map-tier" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Map Packsize
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-map-packsize" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-map-packsize" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Map IIQ
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-map-iiq" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-map-iiq" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Map IIR
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-map-iiq" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-map-iiq" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Area Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-area-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-area-level" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Map Series
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="map-series" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="map_series">
-                    <ul>
-                    </ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Blighted Map
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="blighted-map" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="blighted_map">
-                    <ul>
-                    </ul>
-                  </div>
-
-                  <div class="label">
-                    Blight-Ravaged Map
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="blight-ravaged-map" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="blight_ravaged_map">
-                    <ul>
-                    </ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Map Completion Reward
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="map-completion-reward" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="map_completion_reward">
-                    <ul>
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="filter-group" id="heist_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Heist Filters</span>
-              </div>
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="label">
-                    Wings Revelad
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-wings-revealed" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-wings-revealed" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Total Wings
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-total-wings" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-total-wings" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Escape Routes Revealed
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-escape-routes-revealed" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-escape-routes-revealed" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Total Escape Routes
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-total-escape-routes" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-total-escape-routes" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Reward Rooms Revealed
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-reward-rooms-revealed" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-reward-rooms-revealed" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Total Reward Rooms
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-total-reward-rooms" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-total-reward-rooms" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats full">
-                  <div class="label">
-                    Contract Objective Value
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="contrac-objective-value" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="contract_objective_value">
-                    <ul></ul>
-                  </div>
-                </div>
-
-                <div class="filter-stats">
-                  <div class="label">
-                    Lockpicking Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-lockpicking-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-lockpicking-level" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Brute Force Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-brute-force-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-brute-force-level" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Perception Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-perception-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-perception-level" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Demolition Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-demolition-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-demolition-level" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Counter-Thaum. Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-counter-thaum-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-counter-thaum-level" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Trap Disarment Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-trap-disarment-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-trap-disarment-level" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-
-                <div class="filter-stats">
-                  <div class="label">
-                    Agility Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-agility-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-agility-level" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Deception Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-deception-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-deception-level" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Engineering
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-engineering-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-engineering-level" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label hidden">
-                  </div>
-                  <input type="text" class="min-max hidden" placeholder="min" autocomplete="off">
-                  <input type="text" class="min-max hidden" placeholder="max" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-              </div>
-            </div>
-
-            <div class="filter-group" id="sanctum_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Sanctum Filters</span>
-              </div>
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="label">
-                    Reslove
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-resolve" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-resolve" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Maximum Reslove
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-maximum-resolve" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-maximum-resolve" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Inspiration
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-inspiration" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-inspiration" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Aureus
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-aureus" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-aureus" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-              </div>
-            </div>
-
-            <div class="filter-group" id="ultimatum_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Ultimatum Filters</span>
-              </div>
-              <div class="expanded off">
-                <div class="filter-stats full">
-                  <div class="label">
-                    Challenge Type
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="challenge-type" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="challenge_type">
-                    <ul>
-                    </ul>
-                  </div>
-                </div>
-                <div class="filter-stats full">
-                  <div class="label">
-                    Reward Type
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="reward-type" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="reward_type">
-                    <ul>
-                    </ul>
-                  </div>
-                </div>
-                <div class="filter-stats full">
-                  <div class="label">
-                    Required Item
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="required-item" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="required_item">
-                    <ul>
-                    </ul>
-                  </div>
-                </div>
-                <div class="filter-stats full">
-                  <div class="label">
-                    Reward Unique
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="reward-unique" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="reward_unique">
-                    <ul>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="filter-group" id="miscellaneous_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Miscellaneous</span>
-              </div>
-              <div class="expanded off">
-                <div class="filter-stats">
-                  <div class="label">
-                    Quality
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-quality" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-quality" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Item Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-item-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-item-level" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Gem Level
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-gem-level" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-gem-level" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Gem Experience %
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-gem-experience" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-gem-experience" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Transigured Gem
-                  </div>
-                  <div class="selection" style="margin-right: 2px;">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="transfigured-gems" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="transfigured_gems">
-                    <ul></ul>
-                  </div>
-                  <div class="label">
-                    Vaal Gem
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="vaal-gem" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="vaal_gem">
-                    <ul></ul>
-                  </div>
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Corpse Type
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="corpse-type" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="corpse_type">
-                    <ul></ul>
-                  </div>
-
-                  <div class="label">
-                    Crucible Item
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="crucible-item" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="crucible_item">
-                    <ul></ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Fractured Item
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="fracutred-item" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="fractured_item">
-                    <ul></ul>
-                  </div>
-
-                  <div class="label">
-                    Synthesised Item
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="synthesised-item" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="synthesised_item">
-                    <ul></ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Searing Exarch Item
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="searing-exarch-item" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="searing_exarch_item">
-                    <ul></ul>
-                  </div>
-
-                  <div class="label">
-                    Eater of Worlds Item
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="eater-of-worlds-item" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="eater_of_worlds_item">
-                    <ul></ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Identified
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="identified" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="identified">
-                    <ul></ul>
-                  </div>
-                  <div class="label">
-                    Corrupted
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="corrupted" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="corrupted">
-                    <ul></ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Mirrored
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="mirrored" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="mirrored">
-                    <ul></ul>
-                  </div>
-
-                  <div class="label">
-                    Split
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="split" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="split">
-                    <ul></ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Crafted
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="crafted" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="crafted">
-                    <ul></ul>
-                  </div>
-
-                  <div class="label">
-                    Veiled
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="veiled" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="veiled">
-                    <ul></ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Foreseeing
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="foreseeing" name="foreseeing">
-                    <ul></ul>
-                  </div>
-
-                  <div class="label">
-                    Talisman Tier
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-talisman-tier" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-talisman-tier" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Stored Experience
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-stored-experience" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-stored-experience" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label">
-                    Stack Size
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-stack-size" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-stack-size" style="margin-right: 2px;" autocomplete="off">
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Alternate Art
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="alternate-art" autocomplete="off">
-                  </div>
-                  <div class="dropdown half" id="alternate_art">
-                    <ul></ul>
-                  </div>
-
-                  <div class="label">
-                    Foil Variation
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="foil-variation" autocomplete="off">
-                  </div>
-                  <div class="dropdown half right" id="foil_variation">
-                    <ul></ul>
-                  </div>
-
-                </div>
-                <div class="filter-stats">
-                  <div class="label">
-                    Scourge Tier
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-scourge-tier" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-scourge-tier" style="margin-right: 2px;" autocomplete="off">
-
-                  <div class="label hidden">
-                  </div>
-                  <input type="text" class="min-max hidden" placeholder="min" autocomplete="off">
-                  <input type="text" class="min-max hidden" placeholder="max" style="margin-right: 2px;" autocomplete="off">
-                </div>
-
-              </div>
-            </div>
-
-            <div class="filter-group" id="trade_filters">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Trade Filters</span>
-              </div>
-              <div class="expanded off">
-                <div class="filter-stats full">
-                  <div class="label">
-                    Seller Account
-                  </div>
-                  <div class="selection">
-                    <input type="text" class="filter-tags" placeholder="Enter Accont Name..." name="seller-account" autocomplete="off">
-                  </div>
-                </div>
-                <div class="filter-stats full">
-                  <div class="label">
-                    Collapse Listings By Account
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any" name="collapse-listings-by-account" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="collapse_listings_by_account">
-                    <ul></ul>
-                  </div>
-                </div>
-                <div class="filter-stats full">
-                  <div class="label">
-                    Listed
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Any Time" name="listed" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="listed">
-                    <ul></ul>
-                  </div>
-                </div>
-                <div class="filter-stats full">
-                  <div class="label">
-                    Sale Type
-                  </div>
-                  <div class="selection">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price" name="sale-type" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="sale_type">
-                    <ul></ul>
-                  </div>
-                </div>
-                <div class="filter-stats">
-                  <div class="label" style="grid-column: span 4;">
-                    Buyout Price
-                  </div>
-                  <div class="selection" style="grid-column: span 4; margin-right: 0;">
-                    <input type="text" class="filter-tags" placeholder="Buyout or Fixed Price" name="buyout-price" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="buyout_price">
-                    <ul></ul>
-                  </div>
-                  <input type="text" class="min-max" placeholder="min" name="min-buyout-price" autocomplete="off">
-                  <input type="text" class="min-max" placeholder="max" name="max-buyout-price" style="margin-right: 2px;" autocomplete="off">
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="stat-filters">
-
-            <div class="filter-group" id="stats">
-              <div class="filter">
-                <span class="group-btn">
-                  <button class="toggle-btn">
-                    <div class="kvdratk on"></div>
-                  </button>
-                </span>
-                <span class="filter-body">Stat Filters</span>
-                <div class="edit">
-                  <i class="fa fa-edit"></i>
-                </div>
-                <div class="close">
-                  <i class="fa fa-close"></i>
-                </div>
-              </div>
-              <div class="expanded">
-                <div class="filter-stats" style="position: relative;">
-                  <div class="selection full">
-                    <div class="arrow">
-                      <i class="fa fa-caret-down"></i>
-                    </div>
-                    <input type="text" class="filter-tags add-stat-filter" placeholder="+ Add Stat Filter" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="stat_filters" style="margin-left: 3px; width: calc(100% - 8px);">
-                    <ul></ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-
-            <div class="filter-group" style="position: relative;">
-              <div class="expanded" style="position: relative;">
-                <div class="filter-stats" style="position: relative;">
-                  <div class="selection add-stat-group" style="margin-right: 5px; position: relative;">
-                    <input type="text" class="filter-tags" placeholder="+ Add Stat Group" autocomplete="off">
-                  </div>
-                  <div class="dropdown" id="stat_group" style="
-                    margin: 64px 0 0 calc(40% + 3px);
-                    width: calc(((100% - 72px) / 10) * 7 - 24px);
-                  "
-                  >
-                    <ul></ul>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-
-        <div class="controls">
-          <div class="controls-left"></div>
-
-          <div class="controls-center">
-            <button class="search-btn">Search</button>
-          </div>
-
-          <div class="controls-right">
-            <button class="clear-btn" onclick="resetForm()">Clear</button>
-            <button class="toggle-search" onclick="toggleFilters()">
-              <span>Hide Filters</span>
-              <div>
-                <i class="fa fa-chevron-up"></i>
-              </div>
-            </button>
-          </div>
+          </form>
         </div>
       </div>
-    </form>
 
-  </div>
-  </div>
+      <div class="main register hidden">
+        <div class="box">
+          <i class="horns-top"></i>
+          <i class="horns-bottom"></i>
+          <div class="title">
+            <h2>Sign up</h2>
+          </div>
+          <p>Accounts are shared between Path of Exile 1 and Path of Exile 2</p>
 
-  <div class="bottom" style="margin-top: -40px;">
-    <span class="copyright">© 2010 - 2024 <a href="http://www.grindinggear.com" style="color: #444;">Grinding Gear
-        Games</a></span><br>
-    <span class="legal">
-      <a href="/legal/terms-of-use-and-privacy-policy" style="color: #444;">Terms of Use, Privacy Notice and Cookies
-        Notice</a><br>
-    </span>
-  </div>
+          <form action="#" class="register-form">
+            <div class="poe-input">
+              <input
+                class="poe-input_input"
+                type="text"
+                id="account-name"
+                autocomplete="off"
+                placeholder="Account name"
+                required
+              /><label for="account-name" class="placeholder"
+                >Account Name</label
+              >
+            </div>
+            <div class="poe-input">
+              <input
+                class="poe-input_input"
+                type="email"
+                id="email"
+                autocomplete="off"
+                placeholder="Email"
+                required
+              /><label for="email" class="placeholder">Email</label>
+            </div>
+            <div class="poe-input">
+              <input
+                class="poe-input_input"
+                type="password"
+                id="password"
+                autocomplete="off"
+                placeholder="Password"
+                pattern=".{8,}"
+                title="Password must be atleat 8 characters long."
+                required
+              /><label for="password" class="placeholder">Password</label>
+            </div>
+            <div class="poe-input">
+              <input
+                class="poe-input_input"
+                type="password"
+                id="repeat-password"
+                autocomplete="off"
+                placeholder="Confirm Password"
+                pattern=".{8,}"
+                required
+              /><label for="repeat-password" class="placeholder"
+                >Confirm Password</label
+              >
+            </div>
 
-  <script src="scripts/script.js"></script>
-  <script src="scripts/loaders.js"></script>
-</body>
+            <div class="remember-forgot">
+              <label for="cookes" class="poe-checkbox">
+                <input type="checkbox" name="cookies" id="cookies" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  ></path>
+                </svg>
+                <span style="margin-top: 0.8rem">
+                  <a
+                    href="#"
+                    style="font-family: optimus-princeps; color: #ead9af"
+                  >
+                    I accept the
+                    <a
+                      style="
+                        font-family: optimus-princeps;
+                        color: #dcdcdc;
+                        margin-left: 0;
+                      "
+                    >
+                      Terms of Use, Privacy Notice, and Notice
+                    </a>
+                  </a>
+                </span>
+              </label>
+            </div>
+            <input
+              type="submit"
+              value="Create Account"
+              class="signin-signup"
+              id="register-continue"
+            />
+            <p>
+              Have an Account?
+              <a href="" id="sign-in">Sign In instead.</a>
+            </p>
 
+            <div class="or-continue-with">Or continue with</div>
+            <div class="alternate-sign-ins">
+              <div class="platform" style="background-color: #000">
+                <a href="#"
+                  ><img src="assets/platforms/steam.svg" alt="Steam"
+                /></a>
+              </div>
+              <div class="platform" style="background-color: #fff">
+                <a href="#">
+                  <img src="assets/platforms/epic-dark.svg" alt="Epic" />
+                </a>
+              </div>
+              <div class="platform" style="background-color: #267a1c">
+                <a href="#">
+                  <img src="assets/platforms/xbox.svg" alt="Xbox" />
+                </a>
+              </div>
+              <div class="platform" style="background-color: #05398e">
+                <a href="#">
+                  <img src="assets/platforms/sony.svg" alt="Sony" />
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/index/main.js"></script>
+  </body>
 </html>

@@ -15,8 +15,8 @@
   font-family: roman-smallcaps;
   font-size: 14.3px;
 }
-body,
-html {
+html,
+body {
   height: 100%;
 }
 body {
@@ -24,6 +24,10 @@ body {
     center fixed;
   background-size: contain;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -133,8 +137,6 @@ input {
   text-align: center;
 }
 
-/* BELOW TABS */
-
 .search-bar {
   display: flex;
   font-size: 0.9rem;
@@ -185,10 +187,7 @@ input {
 .dropdowns input:focus::placeholder {
   color: var(--placeholder-color-focused);
 }
-.dropdowns:focus-within .dropdown{
-  display: block;
-}
-.dropdowns:focus-within .fa {
+.dropdowns .arrow.rotated .fa {
   transform: rotate(180deg);
 }
 
@@ -196,6 +195,9 @@ input {
   display: flex;
   padding: 8px 0 0;
   background-color: black;
+}
+.filters.off {
+  display: none;
 }
 .misc-filters,
 .stat-filters {
@@ -372,11 +374,18 @@ input {
   padding: 1px 4px;
   color: var(--font-color);
   line-height: 20px;
+  position: relative;
 }
-.filter-tags::placeholder {
-  color: var(--font-color);
+.selection:focus-within input {
+  cursor: text;
 }
-.filter-tags:focus::placeholder {
+.selection:focus-within {
+  cursor: default;
+}
+.selection input.filter-tags::placeholder {
+  color: var(--font-color) !important;
+}
+input.filter-tags:focus::placeholder {
   color: var(--placeholder-color-focused);
   text-align: left;
 }
@@ -391,7 +400,6 @@ input {
   text-align: center;
   color: var(--font-color);
   line-height: 24px;
-  
 }
 
 .fa {
@@ -536,6 +544,12 @@ input {
   background-color: #465260;
   font-weight: 1000;
 }
-.selection:focus-within + .dropdown{
+.dropdown {
+  display: none;
+}
+.dropdown.show {
   display: block;
+}
+.selection.not-empty {
+  border: 1px solid #a0a0d0;
 }

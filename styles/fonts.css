@@ -8,3 +8,17 @@
   src: url("https://web.poecdn.com/font/fontin-regular-webfont.woff")
     format("woff");
 }
+@font-face {
+  font-family: "cinzel";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://web.poecdn.com/font/Cinzel-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "optimus-princeps";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://www.pathofexile.com/font/OptimusPrincepsSemiBold.ttf")
+    format("truetype");
+}
