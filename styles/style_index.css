@@ -1,20 +1,11 @@
 @import url(fonts.css);
 
-:root {
-  --input-backgrounds: #1e2124;
-  --input-labels: #0d0e10;
-  --placeholder-color-focused: #707070;
-  --font-color: #e2e2e2;
-  --fourth-color: #634928;
-  --filters-font-color: #fff8e1;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: roman-smallcaps;
-  font-size: 14.3px;
+  font-size: 1rem;
   color: white;
 }
 html,
@@ -164,10 +155,9 @@ img {
   transform: translate(-50%);
 }
 .main .box p {
-  font-size: 1rem;
   color: #9d9d9d;
   font-weight: 200;
-  margin: 2rem 0 0.4rem;
+  margin: 2rem 0 1rem;
   text-align: center;
   font-family: optimus-princeps;
 }
@@ -236,6 +226,9 @@ img {
 .remember-forgot a {
   font-family: optimus-princeps;
   color: #ead9af;
+}
+.remember-forgot a:hover{
+  filter: brigtness(1.2);
 }
 .poe-checkbox {
   display: inline-flex;
