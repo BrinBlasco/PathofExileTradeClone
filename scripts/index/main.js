@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function handleSubmitAction(action) {
   switch (action) {
     case "login-continue":
-      location.href = "/trade.html";
+      location.href = "/PathofExileTradeClone/trade";
       break;
     case "register-continue":
-      location.href = "/";
+      location.href = "/PathofExileTradeClone/";
     default:
       break;
   }
