@@ -1,20 +1,18 @@
 @import url(fonts.css);
 
 :root {
-  --input-backgrounds: #1e2124;
-  --input-labels: #0d0e10;
-  --placeholder-color-focused: #707070;
-  --font-color: #e2e2e2;
-  --fourth-color: #634928;
-  --filters-font-color: #fff8e1;
+  --font-default: Verdana, Arial, Helvetica, sans-serif !important;
+  --font-optimus-semibold: "optimus-princeps";
+  --font-styled: "FontinRegular";
+  --color-text: #ead9af;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: roman-smallcaps;
-  font-size: 14.3px;
+  font-family: var(--font-styled);
+  font-size: 0.9rem;
   color: white;
 }
 html,
@@ -30,6 +28,7 @@ body {
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  font-size: 12px;
 }
 a {
   text-decoration: none;
@@ -37,6 +36,11 @@ a {
 input {
   box-sizing: border-box;
   outline: none;
+  font-family: var(--font-default);
+  color: #fff1d1;
+  line-height: 1.65;
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 img {
   border: 0;
@@ -55,7 +59,7 @@ img {
 
 .main {
   position: relative;
-  margin: 30px auto;
+  margin: 30px auto 100px auto;
   width: 100%;
   display: flex;
   align-items: center;
@@ -167,9 +171,9 @@ img {
   font-size: 1rem;
   color: #9d9d9d;
   font-weight: 200;
-  margin: 2rem 0 0.4rem;
+  margin: 2rem 0 1rem;
   text-align: center;
-  font-family: optimus-princeps;
+  font-family: var(--font-optimus-semibold);
 }
 
 .login-form,
@@ -193,7 +197,7 @@ img {
 .poe-input input {
   background-color: black;
   border: 1px solid #4a3d22;
-  padding: 1.2em 0.6em 0.4em;
+  padding: 1.2rem 0.6rem 0.4rem;
   flex-grow: 1;
   align-self: stretch;
 }
@@ -213,17 +217,18 @@ img {
 
 .poe-input label.placeholder {
   position: absolute;
-  top: 1.5em;
+  top: 1.5rem;
   left: 0;
   cursor: text;
-  padding: 0.8em;
-  padding-top: 1.1em;
+  padding: 0.8rem;
+  padding-top: 1.1rem;
   line-height: 1.2;
   transition: transform 0.15s;
   transform-origin: top left;
   transform: translateY(-50%);
-  color: #ead9af;
+  color: var(--color-text);
   user-select: none;
+  font-family: var(--font-optimus-semibold);
 }
 
 .remember-forgot {
@@ -234,8 +239,11 @@ img {
 }
 .remember-forgot span,
 .remember-forgot a {
-  font-family: optimus-princeps;
-  color: #ead9af;
+  font-family: var(--font-optimus-semibold);
+  color: var(--color-text);
+}
+.remember-forgot a:hover {
+  filter: brightness(1.2);
 }
 .poe-checkbox {
   display: inline-flex;
