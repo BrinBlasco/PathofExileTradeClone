@@ -279,7 +279,7 @@ img {
 }
 .signin-signup {
   margin-top: 0.4rem;
-  background: url("../assets/button-primary.png") no-repeat;
+  background: url("../assets/nine-palace/button-primary.png") no-repeat;
   background-size: 100% 100%;
   display: flex;
   align-items: center;
