@@ -386,14 +386,14 @@ input {
 .selection:focus-within {
   cursor: default;
 }
+.filter-tags:focus {
+  text-align: left;
+}
 .selection input.filter-tags::placeholder {
   color: var(--font-color) !important;
 }
 input.filter-tags:focus::placeholder {
-  color: var(--placeholder-color-focused);
-  text-align: left;
-}
-.filter-tags:focus {
+  color: var(--placeholder-color-focused) !important;
   text-align: left;
 }
 

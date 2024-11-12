@@ -72,9 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".expanded").forEach((container) => {
     const inputWrappers = container.querySelectorAll(".selection");
-    const dropdowns = container.querySelectorAll(".dropdown");
 
-    inputWrappers.forEach((inputWrapper, index) => {
+    inputWrappers.forEach((inputWrapper) => {
       const dropdown = inputWrapper.nextElementSibling; // Assumes dropdown is the next sibling
 
       if (!dropdown || dropdown.classList.contains("dropdown") === false) {
@@ -103,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         options.forEach((option) => {
           option.addEventListener("click", (event_option) => {
             event_option.stopPropagation();
+            inputField.value = "";
             inputField.placeholder = option.innerText;
             dropdown.classList.remove("show");
             inputField.blur();
@@ -280,7 +280,7 @@ function handleSubmitAction(action) {
         jsonString = jsonString == "" ? "None" : jsonString;
 
         Swal.fire({
-          title: "Searched:",
+          title: "Search:",
           html: `   
             <p>
               Platform: ${platform} <br />
