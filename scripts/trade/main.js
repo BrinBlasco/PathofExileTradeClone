@@ -72,11 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".expanded").forEach((container) => {
     const inputWrappers = container.querySelectorAll(".selection");
-    const dropdowns = container.querySelectorAll(".dropdown");
 
-    inputWrappers.forEach((inputWrapper, index) => {
-      const dropdown = dropdowns[index];
-      if (!dropdown) return;
+    inputWrappers.forEach((inputWrapper) => {
+      const dropdown = inputWrapper.nextElementSibling; // Assumes dropdown is the next sibling
+
+      if (!dropdown || dropdown.classList.contains("dropdown") === false) {
+        return;
+      }
 
       inputWrapper.addEventListener("click", (e_inputWrapper) => {
         e_inputWrapper.stopPropagation();
@@ -100,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         options.forEach((option) => {
           option.addEventListener("click", (event_option) => {
             event_option.stopPropagation();
+            inputField.value = "";
             inputField.placeholder = option.innerText;
             dropdown.classList.remove("show");
             inputField.blur();
@@ -206,56 +209,70 @@ function handleSubmitAction(action) {
       const formData = new FormData(form);
       const jsonData = {};
 
-      let baseItem = "";
-
       try {
-        formData.forEach((value, key) => {
-          const inputElements = form.querySelectorAll(`[name='${key}']`);
+        function processInput(input, value, key) {
+          const isMinMax = input.classList.contains("min-max");
+          const isSock = input.classList.contains("sockets");
+          const isPlaceholderExcluded = defaultPlaceholders.includes(
+            input.placeholder
+          );
 
-          if (inputElements.length > 1) {
-            const values = [];
-            inputElements.forEach((input) => {
-              if (
-                value !== "" &&
-                !defaultPlaceholders.includes(input.placeholder)
-              ) {
-                values.push(value);
-              }
-            });
-            if (values.length > 0) {
-              jsonData[key] = values;
+          if (isMinMax || isSock) {
+            if (value !== "" && !isPlaceholderExcluded) {
+              jsonData[key] = value;
             }
           } else {
-            const inputElement = inputElements[0];
-
-            if (inputElement) {
-              const isMinMax = inputElement.classList.contains("min-max");
-              const isSock = inputElement.classList.contains("sockets");
-              const isPlaceholderExcluded = defaultPlaceholders.includes(
-                inputElement.placeholder
-              );
-
-              if (isMinMax || isSock) {
-                if (value !== "" && !isPlaceholderExcluded) {
-                  jsonData[key] = value;
-                }
-              } else {
-                const finalValue =
-                  value !== "" ? value : inputElement.placeholder;
-                if (finalValue && !isPlaceholderExcluded) {
-                  jsonData[key] = finalValue;
-                }
-              }
+            const finalValue = value !== "" ? value : input.placeholder;
+            if (finalValue && !isPlaceholderExcluded) {
+              jsonData[key] = finalValue;
             }
           }
+        }
+
+        formData.forEach((value, key) => {
+          const inputElement = form.querySelector(`[name='${key}']`);
+
+          if (inputElement) {
+            processInput(inputElement, value, key);
+          }
         });
-        baseItem =
+
+        let baseItem =
           jsonData["base-item"] === "" ||
           jsonData["base-item"] == "Search Items..." ||
           !jsonData["base-item"]
             ? ""
             : `<h3 style="font-size: 18px;">${jsonData["base-item"]}</h3><br />`;
+
         delete jsonData["base-item"];
+
+        let obj = {
+          "seller-account": jsonData["seller-account"],
+          "collapse-listings-by-account":
+            jsonData["collapse-listings-by-account"],
+          listed: jsonData["listed"],
+          "sale-type": jsonData["sale-type"],
+          "buyout-price": jsonData["buyout-price"],
+        };
+
+        let tradeFilters = ``;
+        for (let [key, value] of Object.entries(obj)) {
+          if (value) {
+            formattedKey = key.split("-").join(" ");
+            formattedKey =
+              formattedKey[0].toUpperCase() + formattedKey.slice(1);
+
+            tradeFilters += `${formattedKey}: ${value} <br />`;
+          }
+        }
+        let tradeFiltersString = `<br/><hr><br/><h3>Trade Filters:</h3><p>${tradeFilters}</p>`;
+
+        delete jsonData["seller-account"];
+        delete jsonData["collapse-listings-by-account"];
+        delete jsonData["listed"];
+        delete jsonData["sale-type"];
+        delete jsonData["buyout-price"];
+
         let jsonString = JSON.stringify(jsonData, null, 4).substring(
           1,
           JSON.stringify(jsonData, null, 4).length - 1
@@ -263,17 +280,20 @@ function handleSubmitAction(action) {
         jsonString = jsonString == "" ? "None" : jsonString;
 
         Swal.fire({
-          title: "Searched:",
-          html: `
-            ${baseItem}
+          title: "Search:",
+          html: `   
             <p>
               Platform: ${platform} <br />
               League: ${league} <br />
               Status: ${status} <br />
             </p>
             <br />
+            <hr>
+            <br />
+            ${baseItem}
             <h3>Filters:</h3>
-            <pre style="text-align: let; font-familiy: monospace; white-space: pre-wrap;">${jsonString}</pre> 
+            <pre style="text-align: let; font-familiy: monospace; white-space: pre-wrap;">${jsonString}</pre>
+            ${tradeFiltersString}
           `,
           confirmButtonText: "Cool",
           background: "#000",
@@ -287,6 +307,7 @@ function handleSubmitAction(action) {
 
             const popup = Swal.getPopup();
             popup.style.border = "1px solid #634928";
+            popup.style.borderRadius = "0";
           },
         });
       } catch (error) {
@@ -294,7 +315,6 @@ function handleSubmitAction(action) {
       }
       break;
     default:
-      console.log(action);
   }
 }
 
@@ -304,5 +324,84 @@ function closeDropdowns() {
   });
   document.querySelectorAll(".arrow").forEach((arrow) => {
     if (arrow.classList.contains("rotated")) arrow.classList.remove("rotated");
+  });
+}
+
+function showAbout() {
+  Swal.fire({
+    title: "About",
+    html: `
+      <h1> Made by Brin Blasco </h1>
+      <br />
+      <style>
+        a {
+        color: #9999FF;
+        }
+      </style>
+      <span>Github: <a href="https://github.com/BrinBlasco">github.com/BrinBlasco</a></span> <br />
+      <span>Original Page: <a href="https://pathofexile.com/trade">pathofexile.com/trade</a></span> <br />
+      <span>Hosted with: <a href="https://pages.github.com/">Github Pages</a></span> <br />
+      
+
+    `,
+    confirmButtonText: "Cool",
+    background: "#000",
+    color: "#e2e2e2",
+    didOpen: () => {
+      const confirmButton = Swal.getConfirmButton();
+      confirmButton.style.backgroundColor = "#1e2124";
+      confirmButton.style.borderRadius = "0";
+      confirmButton.style.color = "white";
+
+      const popup = Swal.getPopup();
+      popup.style.border = "1px solid #634928";
+      popup.style.borderRadius = "0";
+    },
+  });
+}
+
+function showBulk() {
+  Swal.fire({
+    title: "Bulk",
+    icon: "warning",
+    html: `
+      <h1 style="font-size: 24px;">Not implemented</h1>
+    `,
+    confirmButtonText: "Alright",
+    background: "#000",
+    color: "#e2e2e2",
+    didOpen: () => {
+      const confirmButton = Swal.getConfirmButton();
+      confirmButton.style.backgroundColor = "#1e2124";
+      confirmButton.style.borderRadius = "0";
+      confirmButton.style.color = "white";
+
+      const popup = Swal.getPopup();
+      popup.style.border = "1px solid #634928";
+      popup.style.borderRadius = "0";
+    },
+  });
+}
+
+function showSettings() {
+  Swal.fire({
+    title: "Settings",
+    icon: "warning",
+    html: `
+      <h1 style="font-size: 24px;">Not implemented</h1>
+    `,
+    confirmButtonText: "Alright",
+    background: "#000",
+    color: "#e2e2e2",
+    didOpen: () => {
+      const confirmButton = Swal.getConfirmButton();
+      confirmButton.style.backgroundColor = "#1e2124";
+      confirmButton.style.borderRadius = "0";
+      confirmButton.style.color = "white";
+
+      const popup = Swal.getPopup();
+      popup.style.border = "1px solid #634928";
+      popup.style.borderRadius = "0";
+    },
   });
 }

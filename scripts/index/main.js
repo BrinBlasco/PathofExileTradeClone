@@ -24,13 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function handleSubmitAction(action) {
+  const repoRoot = `${location.origin}${location.pathname
+    .split("/")
+    .slice(0, 2)
+    .join("/")}/`;
+
   switch (action) {
     case "login-continue":
-      location.href = "/PathofExileTradeClone/trade";
+      location.href = `${repoRoot}trade.html`; // Navigates to the "trade.html" page in the repo
       break;
     case "register-continue":
-      location.href = "/PathofExileTradeClone/";
-    default:
+      location.href = repoRoot; // Navigates to the root (index) of your repository
       break;
   }
 }
