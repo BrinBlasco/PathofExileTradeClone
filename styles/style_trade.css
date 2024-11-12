@@ -36,6 +36,19 @@ input {
   all: unset;
   box-sizing: border-box;
 }
+.logout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline;
+  color: var(--filters-font-color);
+  padding: 25px;
+  cursor: pointer;
+  font-family: roman-smallcaps;
+}
+.logout:hover{
+  filter: brightness(1.2);
+}
 
 #logo {
   display: flex;
